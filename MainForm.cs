@@ -25,16 +25,16 @@ namespace Student_Management_System
 
         private void customizeDesign()
         {
-            panel_stdsubmenu.Visible = false;
+            panel_stdSubmenu.Visible = false;
             panel_courseSubmenu.Visible = false;
             panel_scoreSubmenu.Visible = false;
         }
 
         private void hideSubmenu()
         {
-            if (panel_stdsubmenu.Visible == true)
+            if (panel_stdSubmenu.Visible == true)
             {
-                panel_stdsubmenu.Visible = false;
+                panel_stdSubmenu.Visible = false;
             }
             if (panel_courseSubmenu.Visible == true)
             {
@@ -60,9 +60,9 @@ namespace Student_Management_System
 
         private void button_std_Click(object sender, EventArgs e)
         {
-            showSubmenu(panel_stdsubmenu);
+            showSubmenu(panel_stdSubmenu);
         }
-
+        #region Stdsubmenu
         private void button_Registration_Click(object sender, EventArgs e)
         {
             //...
@@ -94,12 +94,12 @@ namespace Student_Management_System
             //...
             hideSubmenu();
         }
-
+        #endregion Stdsubmenu
         private void button_course_Click(object sender, EventArgs e)
         {
             showSubmenu(panel_courseSubmenu);
         }
-
+        #region courseSubmenu
         private void button__newCourse_Click(object sender, EventArgs e)
         {
             //...
@@ -123,12 +123,12 @@ namespace Student_Management_System
             //...
             hideSubmenu();
         }
-
+        #endregion courseSubmenu
         private void button_score_Click(object sender, EventArgs e)
         {
             showSubmenu(panel_scoreSubmenu);
         }
-
+        #region scoreSubmenu
         private void button_newScore_Click(object sender, EventArgs e)
         {
             //...
@@ -152,5 +152,6 @@ namespace Student_Management_System
             //...
             hideSubmenu();
         }
+        #endregion scoreSubmenu
     }
 }
