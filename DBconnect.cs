@@ -14,14 +14,11 @@ namespace Student_Management_System
             "port=3306;" +
             "username=root;" +
             "password=;" +
-            "database=student-db;");
+            "database=siswa-db;");
 
         public MySqlConnection getconnection
         {
-            get
-            {
-                return connect;
-            }
+            get { return connect; }
         }
 
         public void openConnect()
