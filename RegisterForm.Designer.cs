@@ -42,23 +42,25 @@
             this.radioButton_perempuan = new System.Windows.Forms.RadioButton();
             this.label_alamat = new System.Windows.Forms.Label();
             this.textBox_alamat = new System.Windows.Forms.TextBox();
-            this.pictureBox_murid = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.button_tambah = new System.Windows.Forms.Button();
             this.button_clear = new System.Windows.Forms.Button();
             this.label_noTelp = new System.Windows.Forms.Label();
             this.textBox_telepon = new System.Windows.Forms.TextBox();
             this.button_upload = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox_murid = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label_registrasi = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_murid)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_murid)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_nama
             // 
+            this.label_nama.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_nama.AutoSize = true;
             this.label_nama.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_nama.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
@@ -70,10 +72,11 @@
             // 
             // textBox_nama
             // 
+            this.textBox_nama.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox_nama.Location = new System.Drawing.Point(94, 21);
             this.textBox_nama.Name = "textBox_nama";
             this.textBox_nama.Size = new System.Drawing.Size(419, 27);
-            this.textBox_nama.TabIndex = 2;
+            this.textBox_nama.TabIndex = 0;
             // 
             // DataGridView_murid
             // 
@@ -109,7 +112,7 @@
             this.DataGridView_murid.RowHeadersVisible = false;
             this.DataGridView_murid.RowHeadersWidth = 51;
             this.DataGridView_murid.RowTemplate.Height = 80;
-            this.DataGridView_murid.Size = new System.Drawing.Size(909, 291);
+            this.DataGridView_murid.Size = new System.Drawing.Size(909, 289);
             this.DataGridView_murid.TabIndex = 2;
             this.DataGridView_murid.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView_murid.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -135,6 +138,7 @@
             // 
             // label_tanggalLahir
             // 
+            this.label_tanggalLahir.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_tanggalLahir.AutoSize = true;
             this.label_tanggalLahir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_tanggalLahir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
@@ -146,13 +150,15 @@
             // 
             // dateTimePicker_lahir
             // 
+            this.dateTimePicker_lahir.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateTimePicker_lahir.Location = new System.Drawing.Point(150, 72);
             this.dateTimePicker_lahir.Name = "dateTimePicker_lahir";
             this.dateTimePicker_lahir.Size = new System.Drawing.Size(291, 27);
-            this.dateTimePicker_lahir.TabIndex = 6;
+            this.dateTimePicker_lahir.TabIndex = 2;
             // 
             // label_jenisKelamin
             // 
+            this.label_jenisKelamin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_jenisKelamin.AutoSize = true;
             this.label_jenisKelamin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_jenisKelamin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
@@ -164,32 +170,35 @@
             // 
             // radioButton_laki
             // 
+            this.radioButton_laki.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton_laki.AutoSize = true;
             this.radioButton_laki.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton_laki.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.radioButton_laki.Location = new System.Drawing.Point(592, 74);
             this.radioButton_laki.Name = "radioButton_laki";
             this.radioButton_laki.Size = new System.Drawing.Size(58, 23);
-            this.radioButton_laki.TabIndex = 8;
+            this.radioButton_laki.TabIndex = 3;
             this.radioButton_laki.TabStop = true;
             this.radioButton_laki.Text = "Laki";
             this.radioButton_laki.UseVisualStyleBackColor = true;
             // 
             // radioButton_perempuan
             // 
+            this.radioButton_perempuan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton_perempuan.AutoSize = true;
             this.radioButton_perempuan.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton_perempuan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.radioButton_perempuan.Location = new System.Drawing.Point(656, 74);
             this.radioButton_perempuan.Name = "radioButton_perempuan";
             this.radioButton_perempuan.Size = new System.Drawing.Size(119, 23);
-            this.radioButton_perempuan.TabIndex = 9;
+            this.radioButton_perempuan.TabIndex = 4;
             this.radioButton_perempuan.TabStop = true;
             this.radioButton_perempuan.Text = "Perempuan";
             this.radioButton_perempuan.UseVisualStyleBackColor = true;
             // 
             // label_alamat
             // 
+            this.label_alamat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_alamat.AutoSize = true;
             this.label_alamat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_alamat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
@@ -201,47 +210,46 @@
             // 
             // textBox_alamat
             // 
+            this.textBox_alamat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox_alamat.Location = new System.Drawing.Point(102, 124);
             this.textBox_alamat.Multiline = true;
             this.textBox_alamat.Name = "textBox_alamat";
             this.textBox_alamat.Size = new System.Drawing.Size(658, 50);
-            this.textBox_alamat.TabIndex = 11;
+            this.textBox_alamat.TabIndex = 5;
             // 
-            // pictureBox_murid
+            // panel2
             // 
-            this.pictureBox_murid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.button_tambah);
+            this.panel2.Controls.Add(this.button_clear);
+            this.panel2.Controls.Add(this.label_noTelp);
+            this.panel2.Controls.Add(this.textBox_telepon);
+            this.panel2.Controls.Add(this.button_upload);
+            this.panel2.Controls.Add(this.pictureBox_murid);
+            this.panel2.Controls.Add(this.label_nama);
+            this.panel2.Controls.Add(this.textBox_alamat);
+            this.panel2.Controls.Add(this.textBox_nama);
+            this.panel2.Controls.Add(this.label_alamat);
+            this.panel2.Controls.Add(this.radioButton_perempuan);
+            this.panel2.Controls.Add(this.radioButton_laki);
+            this.panel2.Controls.Add(this.label_tanggalLahir);
+            this.panel2.Controls.Add(this.label_jenisKelamin);
+            this.panel2.Controls.Add(this.dateTimePicker_lahir);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 352);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(934, 259);
+            this.panel2.TabIndex = 13;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox_murid.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox_murid.Location = new System.Drawing.Point(807, 22);
-            this.pictureBox_murid.Name = "pictureBox_murid";
-            this.pictureBox_murid.Size = new System.Drawing.Size(118, 110);
-            this.pictureBox_murid.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox_murid.TabIndex = 12;
-            this.pictureBox_murid.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button_tambah);
-            this.panel1.Controls.Add(this.button_clear);
-            this.panel1.Controls.Add(this.label_noTelp);
-            this.panel1.Controls.Add(this.textBox_telepon);
-            this.panel1.Controls.Add(this.button_upload);
-            this.panel1.Controls.Add(this.pictureBox_murid);
-            this.panel1.Controls.Add(this.label_nama);
-            this.panel1.Controls.Add(this.textBox_alamat);
-            this.panel1.Controls.Add(this.textBox_nama);
-            this.panel1.Controls.Add(this.label_alamat);
-            this.panel1.Controls.Add(this.radioButton_perempuan);
-            this.panel1.Controls.Add(this.radioButton_laki);
-            this.panel1.Controls.Add(this.label_tanggalLahir);
-            this.panel1.Controls.Add(this.label_jenisKelamin);
-            this.panel1.Controls.Add(this.dateTimePicker_lahir);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 354);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(934, 259);
-            this.panel1.TabIndex = 13;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.panel3.Location = new System.Drawing.Point(13, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(909, 10);
+            this.panel3.TabIndex = 33;
             // 
             // button_tambah
             // 
@@ -250,10 +258,10 @@
             this.button_tambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_tambah.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_tambah.ForeColor = System.Drawing.Color.White;
-            this.button_tambah.Location = new System.Drawing.Point(808, 212);
+            this.button_tambah.Location = new System.Drawing.Point(804, 212);
             this.button_tambah.Name = "button_tambah";
             this.button_tambah.Size = new System.Drawing.Size(118, 39);
-            this.button_tambah.TabIndex = 32;
+            this.button_tambah.TabIndex = 8;
             this.button_tambah.Text = "Tambah";
             this.button_tambah.UseVisualStyleBackColor = false;
             this.button_tambah.Click += new System.EventHandler(this.button_tambah_Click);
@@ -265,16 +273,17 @@
             this.button_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_clear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_clear.ForeColor = System.Drawing.Color.White;
-            this.button_clear.Location = new System.Drawing.Point(684, 212);
+            this.button_clear.Location = new System.Drawing.Point(680, 212);
             this.button_clear.Name = "button_clear";
             this.button_clear.Size = new System.Drawing.Size(118, 39);
-            this.button_clear.TabIndex = 31;
+            this.button_clear.TabIndex = 7;
             this.button_clear.Text = "Bersihkan";
             this.button_clear.UseVisualStyleBackColor = false;
             this.button_clear.Click += new System.EventHandler(this.button_clear_Click);
             // 
             // label_noTelp
             // 
+            this.label_noTelp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_noTelp.AutoSize = true;
             this.label_noTelp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_noTelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
@@ -286,37 +295,49 @@
             // 
             // textBox_telepon
             // 
+            this.textBox_telepon.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox_telepon.Location = new System.Drawing.Point(604, 21);
             this.textBox_telepon.Name = "textBox_telepon";
             this.textBox_telepon.Size = new System.Drawing.Size(156, 27);
-            this.textBox_telepon.TabIndex = 30;
+            this.textBox_telepon.TabIndex = 1;
             // 
             // button_upload
             // 
-            this.button_upload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_upload.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button_upload.BackColor = System.Drawing.Color.Green;
             this.button_upload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_upload.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_upload.ForeColor = System.Drawing.Color.White;
-            this.button_upload.Location = new System.Drawing.Point(807, 138);
+            this.button_upload.Location = new System.Drawing.Point(804, 138);
             this.button_upload.Name = "button_upload";
             this.button_upload.Size = new System.Drawing.Size(118, 39);
-            this.button_upload.TabIndex = 28;
+            this.button_upload.TabIndex = 6;
             this.button_upload.Text = "Upload";
             this.button_upload.UseVisualStyleBackColor = false;
             this.button_upload.Click += new System.EventHandler(this.button_upload_Click);
             // 
-            // panel2
+            // pictureBox_murid
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.panel2.Controls.Add(this.label_registrasi);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(934, 51);
-            this.panel2.TabIndex = 14;
+            this.pictureBox_murid.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox_murid.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox_murid.Location = new System.Drawing.Point(804, 22);
+            this.pictureBox_murid.Name = "pictureBox_murid";
+            this.pictureBox_murid.Size = new System.Drawing.Size(118, 110);
+            this.pictureBox_murid.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_murid.TabIndex = 12;
+            this.pictureBox_murid.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.panel1.Controls.Add(this.label_registrasi);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.ForeColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(934, 51);
+            this.panel1.TabIndex = 14;
             // 
             // label_registrasi
             // 
@@ -333,10 +354,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(934, 613);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.DataGridView_murid);
+            this.ClientSize = new System.Drawing.Size(934, 611);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.DataGridView_murid);
+            this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -345,11 +366,11 @@
             this.Text = "Registrasi Murid";
             this.Load += new System.EventHandler(this.RegisterForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_murid)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_murid)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -366,13 +387,14 @@
         private System.Windows.Forms.Label label_alamat;
         private System.Windows.Forms.TextBox textBox_alamat;
         private System.Windows.Forms.PictureBox pictureBox_murid;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button_upload;
         private System.Windows.Forms.Label label_noTelp;
         private System.Windows.Forms.TextBox textBox_telepon;
         private System.Windows.Forms.Button button_tambah;
         private System.Windows.Forms.Button button_clear;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label_registrasi;
+        private System.Windows.Forms.Panel panel3;
     }
 }

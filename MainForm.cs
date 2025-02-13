@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using StudentManagementSystem;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,41 +14,44 @@ namespace Student_Management_System
 {
     public partial class MainForm : Form
     {
-        StudentClass student = new StudentClass();
+        StudentClass siswa = new StudentClass();
         public MainForm()
         {
             InitializeComponent();
             customizeDesign();
         }
 
+        private void jumlahMurid()
+        {
+            label_jumlahMrd.Text = "Jumlah Murid : " + siswa.totalStudent();
+            label_mrdLaki.Text = "Laki : " + siswa.maleStudent();
+            label_mrdPerempuan.Text = "Perempuan : " + siswa.femaleStudent();
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            jumlahMurid();
         }
 
         private void customizeDesign()
         {
-            panel_stdsubmenu.Visible = false;
+            panel_stdSubmenu.Visible = false;
             panel_courseSubmenu.Visible = false;
             panel_scoreSubmenu.Visible = false;
-        
         }
 
-        private void hideSubmenu()
+        private void hideSubmenu(Panel activeSubmenu)
         {
-            if (panel_stdsubmenu.Visible == true)
-                panel_stdsubmenu.Visible = false;
-            if (panel_courseSubmenu.Visible == true)
-                panel_courseSubmenu.Visible = false;
-            if (panel_scoreSubmenu.Visible == true)
-                panel_scoreSubmenu.Visible = false;
+            if (activeSubmenu.Visible == true)
+            {
+                activeSubmenu.Visible = false;
+            }
         }
 
         private void showSubmenu(Panel submenu)
         {
             if (submenu.Visible == false)
             {
-                hideSubmenu();
                 submenu.Visible = true;
             }
             else
@@ -56,7 +60,7 @@ namespace Student_Management_System
 
         private void button_std_Click(object sender, EventArgs e)
         {
-            showSubmenu(panel_stdsubmenu);
+            showSubmenu(panel_stdSubmenu);
         }
         #region StdSubmenu
         private void button_registration_Click(object sender, EventArgs e)
@@ -65,24 +69,16 @@ namespace Student_Management_System
             //...
             //..Your code
             //...
-            hideSubmenu();
-            
+            hideSubmenu(panel_stdSubmenu);
         }
 
         private void button_manageStd_Click(object sender, EventArgs e)
         {
+            openChildForm(new ManageStudentForm());
             //...
             //..Your code
             //...
-            hideSubmenu();
-        }
-
-        private void button_status_Click(object sender, EventArgs e)
-        {
-            //...
-            //..Your code
-            //...
-            hideSubmenu();
+            hideSubmenu(panel_stdSubmenu);
         }
 
         private void button_stdPrint_Click(object sender, EventArgs e)
@@ -90,7 +86,7 @@ namespace Student_Management_System
             //...
             //..Your code
             //...
-            hideSubmenu();
+            hideSubmenu(panel_stdSubmenu);
         }
 
         #endregion StdSubmenu
@@ -104,7 +100,7 @@ namespace Student_Management_System
             //...
             //..Your code
             //...
-            hideSubmenu();
+            hideSubmenu(panel_courseSubmenu);
         }
 
         private void button_manageCourse_Click(object sender, EventArgs e)
@@ -112,7 +108,7 @@ namespace Student_Management_System
             //...
             //..Your code
             //...
-            hideSubmenu();
+            hideSubmenu(panel_courseSubmenu);
         }
 
         private void button_coursePrint_Click(object sender, EventArgs e)
@@ -120,7 +116,7 @@ namespace Student_Management_System
             //...
             //..Your code
             //...
-            hideSubmenu();
+            hideSubmenu(panel_courseSubmenu);
         }
         #endregion CourseSubmenu
 
@@ -134,17 +130,17 @@ namespace Student_Management_System
             //...
             //..Your code
             //...
-            hideSubmenu();
+            hideSubmenu(panel_scoreSubmenu);
         }
 
         private void button_manageScore_Click(object sender, EventArgs e)
         {
-            hideSubmenu();
+            hideSubmenu(panel_scoreSubmenu);
         }
 
         private void button_scorePrint_Click(object sender, EventArgs e)
         {
-            hideSubmenu();
+            hideSubmenu(panel_scoreSubmenu);
         }
 
 
@@ -155,7 +151,14 @@ namespace Student_Management_System
         private void openChildForm(Form childForm)
         {
             if (activeForm != null)
+            {
+                if (activeForm.GetType() == childForm.GetType())
+                {
+                    return;
+                }
                 activeForm.Close();
+            }
+
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -167,11 +170,17 @@ namespace Student_Management_System
             
         }
 
-        private void button_exit_Click(object sender, EventArgs e)
+        private void button_dashboard_Click(object sender, EventArgs e)
         {
             if (activeForm != null)
                 activeForm.Close();
             panel_main.Controls.Add(panel_cover);
+            jumlahMurid();
+        }
+
+        private void button_exit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

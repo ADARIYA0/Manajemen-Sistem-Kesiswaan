@@ -32,6 +32,7 @@ namespace Student_Management_System
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel_slide = new System.Windows.Forms.Panel();
             this.button_exit = new System.Windows.Forms.Button();
+            this.button_dashboard = new System.Windows.Forms.Button();
             this.panel_scoreSubmenu = new System.Windows.Forms.Panel();
             this.button_scorePrint = new System.Windows.Forms.Button();
             this.button_manageScore = new System.Windows.Forms.Button();
@@ -42,7 +43,7 @@ namespace Student_Management_System
             this.button_manageCourse = new System.Windows.Forms.Button();
             this.button_newCourse = new System.Windows.Forms.Button();
             this.button_course = new System.Windows.Forms.Button();
-            this.panel_stdsubmenu = new System.Windows.Forms.Panel();
+            this.panel_stdSubmenu = new System.Windows.Forms.Panel();
             this.button_stdPrint = new System.Windows.Forms.Button();
             this.button_manageStd = new System.Windows.Forms.Button();
             this.button_registration = new System.Windows.Forms.Button();
@@ -52,17 +53,15 @@ namespace Student_Management_System
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel_cover = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.label_cfemale = new System.Windows.Forms.Label();
-            this.label_cmale = new System.Windows.Forms.Label();
+            this.label_cperempuan = new System.Windows.Forms.Label();
+            this.label_claki = new System.Windows.Forms.Label();
             this.comboBox_course = new System.Windows.Forms.ComboBox();
-            this.label_femaleStd = new System.Windows.Forms.Label();
-            this.label_maleStd = new System.Windows.Forms.Label();
-            this.label_totalStd = new System.Windows.Forms.Label();
+            this.label_mrdPerempuan = new System.Windows.Forms.Label();
+            this.label_mrdLaki = new System.Windows.Forms.Label();
+            this.label_jumlahMrd = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label_role = new System.Windows.Forms.Label();
             this.label_user = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -70,18 +69,20 @@ namespace Student_Management_System
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.panel_main = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_slide.SuspendLayout();
             this.panel_scoreSubmenu.SuspendLayout();
             this.panel_courseSubmenu.SuspendLayout();
-            this.panel_stdsubmenu.SuspendLayout();
+            this.panel_stdSubmenu.SuspendLayout();
             this.panel_logo.SuspendLayout();
             this.panel_cover.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel_main.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_slide
@@ -89,11 +90,12 @@ namespace Student_Management_System
             this.panel_slide.AutoScroll = true;
             this.panel_slide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.panel_slide.Controls.Add(this.button_exit);
+            this.panel_slide.Controls.Add(this.button_dashboard);
             this.panel_slide.Controls.Add(this.panel_scoreSubmenu);
             this.panel_slide.Controls.Add(this.button_score);
             this.panel_slide.Controls.Add(this.panel_courseSubmenu);
             this.panel_slide.Controls.Add(this.button_course);
-            this.panel_slide.Controls.Add(this.panel_stdsubmenu);
+            this.panel_slide.Controls.Add(this.panel_stdSubmenu);
             this.panel_slide.Controls.Add(this.button_std);
             this.panel_slide.Controls.Add(this.panel_logo);
             this.panel_slide.Dock = System.Windows.Forms.DockStyle.Left;
@@ -109,16 +111,33 @@ namespace Student_Management_System
             this.button_exit.FlatAppearance.BorderSize = 0;
             this.button_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_exit.ForeColor = System.Drawing.Color.White;
-            this.button_exit.Location = new System.Drawing.Point(0, 764);
+            this.button_exit.Location = new System.Drawing.Point(0, 819);
             this.button_exit.Margin = new System.Windows.Forms.Padding(5);
             this.button_exit.Name = "button_exit";
             this.button_exit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button_exit.Size = new System.Drawing.Size(183, 55);
-            this.button_exit.TabIndex = 8;
+            this.button_exit.TabIndex = 13;
             this.button_exit.Text = "Exit";
             this.button_exit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_exit.UseVisualStyleBackColor = true;
             this.button_exit.Click += new System.EventHandler(this.button_exit_Click);
+            // 
+            // button_dashboard
+            // 
+            this.button_dashboard.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button_dashboard.FlatAppearance.BorderSize = 0;
+            this.button_dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_dashboard.ForeColor = System.Drawing.Color.White;
+            this.button_dashboard.Location = new System.Drawing.Point(0, 764);
+            this.button_dashboard.Margin = new System.Windows.Forms.Padding(5);
+            this.button_dashboard.Name = "button_dashboard";
+            this.button_dashboard.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button_dashboard.Size = new System.Drawing.Size(183, 55);
+            this.button_dashboard.TabIndex = 12;
+            this.button_dashboard.Text = "Dashboard";
+            this.button_dashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_dashboard.UseVisualStyleBackColor = true;
+            this.button_dashboard.Click += new System.EventHandler(this.button_dashboard_Click);
             // 
             // panel_scoreSubmenu
             // 
@@ -142,7 +161,7 @@ namespace Student_Management_System
             this.button_scorePrint.Name = "button_scorePrint";
             this.button_scorePrint.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.button_scorePrint.Size = new System.Drawing.Size(183, 50);
-            this.button_scorePrint.TabIndex = 3;
+            this.button_scorePrint.TabIndex = 11;
             this.button_scorePrint.Text = "Print";
             this.button_scorePrint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_scorePrint.UseVisualStyleBackColor = true;
@@ -158,7 +177,7 @@ namespace Student_Management_System
             this.button_manageScore.Name = "button_manageScore";
             this.button_manageScore.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.button_manageScore.Size = new System.Drawing.Size(183, 50);
-            this.button_manageScore.TabIndex = 1;
+            this.button_manageScore.TabIndex = 10;
             this.button_manageScore.Text = "Manage Score";
             this.button_manageScore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_manageScore.UseVisualStyleBackColor = true;
@@ -174,7 +193,7 @@ namespace Student_Management_System
             this.button_newScore.Name = "button_newScore";
             this.button_newScore.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.button_newScore.Size = new System.Drawing.Size(183, 50);
-            this.button_newScore.TabIndex = 0;
+            this.button_newScore.TabIndex = 9;
             this.button_newScore.Text = "New Score";
             this.button_newScore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_newScore.UseVisualStyleBackColor = true;
@@ -191,7 +210,7 @@ namespace Student_Management_System
             this.button_score.Name = "button_score";
             this.button_score.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button_score.Size = new System.Drawing.Size(183, 55);
-            this.button_score.TabIndex = 5;
+            this.button_score.TabIndex = 8;
             this.button_score.Text = "Score";
             this.button_score.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_score.UseVisualStyleBackColor = true;
@@ -219,7 +238,7 @@ namespace Student_Management_System
             this.button_coursePrint.Name = "button_coursePrint";
             this.button_coursePrint.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.button_coursePrint.Size = new System.Drawing.Size(183, 51);
-            this.button_coursePrint.TabIndex = 3;
+            this.button_coursePrint.TabIndex = 7;
             this.button_coursePrint.Text = "Print";
             this.button_coursePrint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_coursePrint.UseVisualStyleBackColor = true;
@@ -235,7 +254,7 @@ namespace Student_Management_System
             this.button_manageCourse.Name = "button_manageCourse";
             this.button_manageCourse.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.button_manageCourse.Size = new System.Drawing.Size(183, 50);
-            this.button_manageCourse.TabIndex = 1;
+            this.button_manageCourse.TabIndex = 6;
             this.button_manageCourse.Text = "Manage Course";
             this.button_manageCourse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_manageCourse.UseVisualStyleBackColor = true;
@@ -251,7 +270,7 @@ namespace Student_Management_System
             this.button_newCourse.Name = "button_newCourse";
             this.button_newCourse.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.button_newCourse.Size = new System.Drawing.Size(183, 50);
-            this.button_newCourse.TabIndex = 0;
+            this.button_newCourse.TabIndex = 5;
             this.button_newCourse.Text = "New Course";
             this.button_newCourse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_newCourse.UseVisualStyleBackColor = true;
@@ -268,23 +287,23 @@ namespace Student_Management_System
             this.button_course.Name = "button_course";
             this.button_course.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button_course.Size = new System.Drawing.Size(183, 55);
-            this.button_course.TabIndex = 3;
+            this.button_course.TabIndex = 4;
             this.button_course.Text = "Course";
             this.button_course.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_course.UseVisualStyleBackColor = true;
             this.button_course.Click += new System.EventHandler(this.button_course_Click);
             // 
-            // panel_stdsubmenu
+            // panel_stdSubmenu
             // 
-            this.panel_stdsubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(200)))));
-            this.panel_stdsubmenu.Controls.Add(this.button_stdPrint);
-            this.panel_stdsubmenu.Controls.Add(this.button_manageStd);
-            this.panel_stdsubmenu.Controls.Add(this.button_registration);
-            this.panel_stdsubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_stdsubmenu.Location = new System.Drawing.Point(0, 196);
-            this.panel_stdsubmenu.Name = "panel_stdsubmenu";
-            this.panel_stdsubmenu.Size = new System.Drawing.Size(183, 154);
-            this.panel_stdsubmenu.TabIndex = 2;
+            this.panel_stdSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(200)))));
+            this.panel_stdSubmenu.Controls.Add(this.button_stdPrint);
+            this.panel_stdSubmenu.Controls.Add(this.button_manageStd);
+            this.panel_stdSubmenu.Controls.Add(this.button_registration);
+            this.panel_stdSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_stdSubmenu.Location = new System.Drawing.Point(0, 196);
+            this.panel_stdSubmenu.Name = "panel_stdSubmenu";
+            this.panel_stdSubmenu.Size = new System.Drawing.Size(183, 154);
+            this.panel_stdSubmenu.TabIndex = 2;
             // 
             // button_stdPrint
             // 
@@ -312,7 +331,7 @@ namespace Student_Management_System
             this.button_manageStd.Name = "button_manageStd";
             this.button_manageStd.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.button_manageStd.Size = new System.Drawing.Size(183, 50);
-            this.button_manageStd.TabIndex = 1;
+            this.button_manageStd.TabIndex = 2;
             this.button_manageStd.Text = "Manage Student";
             this.button_manageStd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_manageStd.UseVisualStyleBackColor = true;
@@ -328,7 +347,7 @@ namespace Student_Management_System
             this.button_registration.Name = "button_registration";
             this.button_registration.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.button_registration.Size = new System.Drawing.Size(183, 50);
-            this.button_registration.TabIndex = 0;
+            this.button_registration.TabIndex = 1;
             this.button_registration.Text = "Registrasi";
             this.button_registration.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_registration.UseVisualStyleBackColor = true;
@@ -345,7 +364,7 @@ namespace Student_Management_System
             this.button_std.Name = "button_std";
             this.button_std.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button_std.Size = new System.Drawing.Size(183, 55);
-            this.button_std.TabIndex = 1;
+            this.button_std.TabIndex = 0;
             this.button_std.Text = "Student";
             this.button_std.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_std.UseVisualStyleBackColor = true;
@@ -408,27 +427,16 @@ namespace Student_Management_System
             this.panel_cover.Size = new System.Drawing.Size(934, 613);
             this.panel_cover.TabIndex = 0;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = global::StudentManagementSystem.Properties.Resources.cover31;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 144);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(934, 372);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.label_cfemale);
-            this.panel3.Controls.Add(this.label_cmale);
+            this.panel3.Controls.Add(this.label_cperempuan);
+            this.panel3.Controls.Add(this.label_claki);
             this.panel3.Controls.Add(this.comboBox_course);
-            this.panel3.Controls.Add(this.label_femaleStd);
-            this.panel3.Controls.Add(this.label_maleStd);
-            this.panel3.Controls.Add(this.label_totalStd);
+            this.panel3.Controls.Add(this.label_mrdPerempuan);
+            this.panel3.Controls.Add(this.label_mrdLaki);
+            this.panel3.Controls.Add(this.label_jumlahMrd);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 519);
             this.panel3.Name = "panel3";
@@ -446,27 +454,27 @@ namespace Student_Management_System
             this.label11.TabIndex = 6;
             this.label11.Text = "Pilih Kelas :";
             // 
-            // label_cfemale
+            // label_cperempuan
             // 
-            this.label_cfemale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_cfemale.AutoSize = true;
-            this.label_cfemale.ForeColor = System.Drawing.Color.White;
-            this.label_cfemale.Location = new System.Drawing.Point(760, 53);
-            this.label_cfemale.Name = "label_cfemale";
-            this.label_cfemale.Size = new System.Drawing.Size(109, 21);
-            this.label_cfemale.TabIndex = 4;
-            this.label_cfemale.Text = "Perempuan :";
+            this.label_cperempuan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_cperempuan.AutoSize = true;
+            this.label_cperempuan.ForeColor = System.Drawing.Color.White;
+            this.label_cperempuan.Location = new System.Drawing.Point(760, 53);
+            this.label_cperempuan.Name = "label_cperempuan";
+            this.label_cperempuan.Size = new System.Drawing.Size(109, 21);
+            this.label_cperempuan.TabIndex = 4;
+            this.label_cperempuan.Text = "Perempuan :";
             // 
-            // label_cmale
+            // label_claki
             // 
-            this.label_cmale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_cmale.AutoSize = true;
-            this.label_cmale.ForeColor = System.Drawing.Color.White;
-            this.label_cmale.Location = new System.Drawing.Point(656, 53);
-            this.label_cmale.Name = "label_cmale";
-            this.label_cmale.Size = new System.Drawing.Size(47, 21);
-            this.label_cmale.TabIndex = 5;
-            this.label_cmale.Text = "Laki :";
+            this.label_claki.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_claki.AutoSize = true;
+            this.label_claki.ForeColor = System.Drawing.Color.White;
+            this.label_claki.Location = new System.Drawing.Point(657, 53);
+            this.label_claki.Name = "label_claki";
+            this.label_claki.Size = new System.Drawing.Size(47, 21);
+            this.label_claki.TabIndex = 5;
+            this.label_claki.Text = "Laki :";
             // 
             // comboBox_course
             // 
@@ -477,38 +485,38 @@ namespace Student_Management_System
             this.comboBox_course.Size = new System.Drawing.Size(211, 29);
             this.comboBox_course.TabIndex = 3;
             // 
-            // label_femaleStd
+            // label_mrdPerempuan
             // 
-            this.label_femaleStd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label_femaleStd.AutoSize = true;
-            this.label_femaleStd.ForeColor = System.Drawing.Color.White;
-            this.label_femaleStd.Location = new System.Drawing.Point(137, 49);
-            this.label_femaleStd.Name = "label_femaleStd";
-            this.label_femaleStd.Size = new System.Drawing.Size(109, 21);
-            this.label_femaleStd.TabIndex = 2;
-            this.label_femaleStd.Text = "Perempuan :";
+            this.label_mrdPerempuan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label_mrdPerempuan.AutoSize = true;
+            this.label_mrdPerempuan.ForeColor = System.Drawing.Color.White;
+            this.label_mrdPerempuan.Location = new System.Drawing.Point(137, 49);
+            this.label_mrdPerempuan.Name = "label_mrdPerempuan";
+            this.label_mrdPerempuan.Size = new System.Drawing.Size(109, 21);
+            this.label_mrdPerempuan.TabIndex = 2;
+            this.label_mrdPerempuan.Text = "Perempuan :";
             // 
-            // label_maleStd
+            // label_mrdLaki
             // 
-            this.label_maleStd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label_maleStd.AutoSize = true;
-            this.label_maleStd.ForeColor = System.Drawing.Color.White;
-            this.label_maleStd.Location = new System.Drawing.Point(35, 49);
-            this.label_maleStd.Name = "label_maleStd";
-            this.label_maleStd.Size = new System.Drawing.Size(47, 21);
-            this.label_maleStd.TabIndex = 2;
-            this.label_maleStd.Text = "Laki :";
+            this.label_mrdLaki.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label_mrdLaki.AutoSize = true;
+            this.label_mrdLaki.ForeColor = System.Drawing.Color.White;
+            this.label_mrdLaki.Location = new System.Drawing.Point(36, 49);
+            this.label_mrdLaki.Name = "label_mrdLaki";
+            this.label_mrdLaki.Size = new System.Drawing.Size(47, 21);
+            this.label_mrdLaki.TabIndex = 2;
+            this.label_mrdLaki.Text = "Laki :";
             // 
-            // label_totalStd
+            // label_jumlahMrd
             // 
-            this.label_totalStd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label_totalStd.AutoSize = true;
-            this.label_totalStd.ForeColor = System.Drawing.Color.White;
-            this.label_totalStd.Location = new System.Drawing.Point(35, 13);
-            this.label_totalStd.Name = "label_totalStd";
-            this.label_totalStd.Size = new System.Drawing.Size(123, 21);
-            this.label_totalStd.TabIndex = 1;
-            this.label_totalStd.Text = "Jumlah Murid :";
+            this.label_jumlahMrd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label_jumlahMrd.AutoSize = true;
+            this.label_jumlahMrd.ForeColor = System.Drawing.Color.White;
+            this.label_jumlahMrd.Location = new System.Drawing.Point(35, 13);
+            this.label_jumlahMrd.Name = "label_jumlahMrd";
+            this.label_jumlahMrd.Size = new System.Drawing.Size(123, 21);
+            this.label_jumlahMrd.TabIndex = 1;
+            this.label_jumlahMrd.Text = "Jumlah Murid :";
             // 
             // panel2
             // 
@@ -523,17 +531,6 @@ namespace Student_Management_System
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(934, 72);
             this.panel2.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox1.Image = global::StudentManagementSystem.Properties.Resources.student;
-            this.pictureBox1.Location = new System.Drawing.Point(832, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 66);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // label_role
             // 
@@ -604,6 +601,28 @@ namespace Student_Management_System
             this.panel_main.Size = new System.Drawing.Size(934, 613);
             this.panel_main.TabIndex = 1;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.Image = global::StudentManagementSystem.Properties.Resources.cover31;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 144);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(934, 372);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox1.Image = global::StudentManagementSystem.Properties.Resources.student;
+            this.pictureBox1.Location = new System.Drawing.Point(832, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 66);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -622,19 +641,19 @@ namespace Student_Management_System
             this.panel_slide.ResumeLayout(false);
             this.panel_scoreSubmenu.ResumeLayout(false);
             this.panel_courseSubmenu.ResumeLayout(false);
-            this.panel_stdsubmenu.ResumeLayout(false);
+            this.panel_stdSubmenu.ResumeLayout(false);
             this.panel_logo.ResumeLayout(false);
             this.panel_logo.PerformLayout();
             this.panel_cover.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel_main.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -652,7 +671,7 @@ namespace Student_Management_System
         private System.Windows.Forms.Button button_manageCourse;
         private System.Windows.Forms.Button button_newCourse;
         private System.Windows.Forms.Button button_course;
-        private System.Windows.Forms.Panel panel_stdsubmenu;
+        private System.Windows.Forms.Panel panel_stdSubmenu;
         private System.Windows.Forms.Button button_stdPrint;
         private System.Windows.Forms.Button button_manageStd;
         private System.Windows.Forms.Button button_registration;
@@ -661,18 +680,18 @@ namespace Student_Management_System
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button_exit;
+        private System.Windows.Forms.Button button_dashboard;
         private System.Windows.Forms.Panel panel_cover;
         private System.Windows.Forms.Panel panel_main;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label_cfemale;
-        private System.Windows.Forms.Label label_cmale;
+        private System.Windows.Forms.Label label_cperempuan;
+        private System.Windows.Forms.Label label_claki;
         private System.Windows.Forms.ComboBox comboBox_course;
-        private System.Windows.Forms.Label label_femaleStd;
-        private System.Windows.Forms.Label label_maleStd;
-        private System.Windows.Forms.Label label_totalStd;
+        private System.Windows.Forms.Label label_mrdPerempuan;
+        private System.Windows.Forms.Label label_mrdLaki;
+        private System.Windows.Forms.Label label_jumlahMrd;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label_role;
@@ -681,5 +700,6 @@ namespace Student_Management_System
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button_exit;
     }
 }
