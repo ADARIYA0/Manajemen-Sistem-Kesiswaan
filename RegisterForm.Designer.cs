@@ -172,6 +172,7 @@
             // 
             this.radioButton_laki.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButton_laki.AutoSize = true;
+            this.radioButton_laki.Checked = true;
             this.radioButton_laki.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton_laki.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.radioButton_laki.Location = new System.Drawing.Point(592, 74);
@@ -192,7 +193,6 @@
             this.radioButton_perempuan.Name = "radioButton_perempuan";
             this.radioButton_perempuan.Size = new System.Drawing.Size(119, 23);
             this.radioButton_perempuan.TabIndex = 4;
-            this.radioButton_perempuan.TabStop = true;
             this.radioButton_perempuan.Text = "Perempuan";
             this.radioButton_perempuan.UseVisualStyleBackColor = true;
             // 

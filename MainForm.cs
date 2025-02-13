@@ -23,9 +23,9 @@ namespace Student_Management_System
 
         private void jumlahMurid()
         {
-            label_jumlahMrd.Text = "Jumlah Murid : " + siswa.totalStudent();
-            label_mrdLaki.Text = "Laki : " + siswa.maleStudent();
-            label_mrdPerempuan.Text = "Perempuan : " + siswa.femaleStudent();
+            label_jumlahMrd.Text = "Jumlah Murid : " + siswa.jumlahMurid();
+            label_mrdLaki.Text = "Laki : " + siswa.muridLaki();
+            label_mrdPerempuan.Text = "Perempuan : " + siswa.muridPerempuan();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -83,6 +83,7 @@ namespace Student_Management_System
 
         private void button_stdPrint_Click(object sender, EventArgs e)
         {
+            openChildForm(new PrintStudentForm());
             //...
             //..Your code
             //...

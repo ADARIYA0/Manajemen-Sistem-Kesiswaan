@@ -64,6 +64,7 @@ namespace StudentManagementSystem
 
         public void showTable()
         {
+            DataGridView_murid.ReadOnly = true;
             DataGridView_murid.DataSource = siswa.getStudentlist();
             DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
             imageColumn = (DataGridViewImageColumn)DataGridView_murid.Columns[6];
@@ -78,7 +79,12 @@ namespace StudentManagementSystem
 
             dateTimePicker_lahir.Value = (DateTime)DataGridView_murid.CurrentRow.Cells[3].Value;
             if (DataGridView_murid.CurrentRow.Cells[4].Value.ToString()  == "Laki")
+            {
                 radioButton_laki.Checked = true;
+            } else
+            {
+                radioButton_perempuan.Checked = true;
+            }
 
             textBox_alamat.Text = DataGridView_murid.CurrentRow.Cells[5].Value.ToString();
             byte[] img = (byte[])DataGridView_murid.CurrentRow.Cells[6].Value;

@@ -54,6 +54,7 @@ namespace Student_Management_System
 
         public void showTable()
         {
+            DataGridView_murid.ReadOnly = true;
             DataGridView_murid.DataSource = siswa.getStudentlist();
             DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
             imageColumn = (DataGridViewImageColumn)DataGridView_murid.Columns[6];

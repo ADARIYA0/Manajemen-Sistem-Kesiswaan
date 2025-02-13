@@ -15,7 +15,7 @@ namespace Student_Management_System
 
         public bool insertStudent(string nama, string telepon, DateTime tanggalLahir, string jenisKelamin, string alamat, byte[] img)
         {
-            MySqlCommand command = new MySqlCommand("INSERT INTO `siswa`(`NamaMurid`, `Telepon`, `TanggalLahir`, `JenisKelamin`, `Alamat`, `FotoMurid`) VALUES(@nama, @telepon, @lahir, @jenisKelamin, @alamat, @img)", connect.getconnection);
+            MySqlCommand command = new MySqlCommand("INSERT INTO siswa(NamaMurid, Telepon, TanggalLahir, JenisKelamin, Alamat, FotoMurid) VALUES(@nama, @telepon, @lahir, @jenisKelamin, @alamat, @img)", connect.getconnection);
 
             command.Parameters.Add("@nama", MySqlDbType.VarChar).Value = nama;
             command.Parameters.Add("@telepon", MySqlDbType.VarChar).Value = telepon;
@@ -54,24 +54,27 @@ namespace Student_Management_System
             return count;
         }
 
-        public string totalStudent()
+        public string jumlahMurid()
         {
             return exeCount("SELECT COUNT(*) FROM siswa");
         }
 
-        public string maleStudent()
+        public string muridLaki()
         {
-            return exeCount("SELECT COUNT(*) FROM siswa WHERE JenisKelamin = 'Laki'");
+            return exeCount("SELECT COUNT(*) FROM siswa WHERE LOWER(JenisKelamin) = 'laki'");
         }
 
-        public string femaleStudent()
+        public string muridPerempuan()
         {
-            return exeCount("SELECT COUNT(*) FROM siswa WHERE JenisKelamin = 'Perempuan'");
+            return exeCount("SELECT COUNT(*) FROM siswa WHERE LOWER(JenisKelamin) = 'Perempuan'");
         }
 
         public DataTable cariMurid(string searchdata)
         {
-            MySqlCommand command = new MySqlCommand("SELECT * FROM siswa WHERE CONCAT(`StdId`, `StdNama`, `Alamat`) LIKE '%" + searchdata + "%'", connect.getconnection);
+            string query = ("SELECT * FROM siswa WHERE CONCAT(Id, NamaMurid, Alamat) LIKE @search");
+            MySqlCommand command = new MySqlCommand(query, connect.getconnection);
+            command.Parameters.AddWithValue("@search", "%" + searchdata + "%");
+
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -80,7 +83,7 @@ namespace Student_Management_System
 
         public bool updateStudent(int id, string nama, string telepon, DateTime tanggalLahir, string jenisKelamin, string alamat, byte[] img)
         {
-            MySqlCommand command = new MySqlCommand("UPDATE `siswa` SET `NamaMurid`=@nama, `Telepon`=@telepon, `TanggalLahir`=@lahir, `JenisKelamin`=@jenisKelamin, `Alamat`=@alamat, `FotoMurid`=@img WHERE `Id`=@id", connect.getconnection);
+            MySqlCommand command = new MySqlCommand("UPDATE siswa SET NamaMurid = @nama, Telepon = @telepon, TanggalLahir = @lahir, JenisKelamin = @jenisKelamin, Alamat = @alamat, FotoMurid = @img WHERE Id = @id", connect.getconnection);
 
             command.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
             command.Parameters.Add("@nama", MySqlDbType.VarChar).Value = nama;
@@ -104,7 +107,7 @@ namespace Student_Management_System
 
         public bool deleteStudent(int id)
         {
-            MySqlCommand command = new MySqlCommand("DELETE FROM siswa WHERE `Id`=@id", connect.getconnection);
+            MySqlCommand command = new MySqlCommand("DELETE FROM siswa WHERE Id = @id", connect.getconnection);
 
             command.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
 
@@ -118,6 +121,15 @@ namespace Student_Management_System
                 connect.closeConnect();
                 return false;
             }
+        }
+
+        public DataTable getList(MySqlCommand command)
+        {
+            command.Connection = connect.getconnection;
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
         }
     }
 }
