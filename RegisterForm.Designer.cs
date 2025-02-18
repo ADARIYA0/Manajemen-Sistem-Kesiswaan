@@ -45,13 +45,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button_tambah = new System.Windows.Forms.Button();
-            this.button_clear = new System.Windows.Forms.Button();
+            this.button_register = new System.Windows.Forms.Button();
             this.label_noTelp = new System.Windows.Forms.Label();
             this.textBox_telepon = new System.Windows.Forms.TextBox();
             this.button_upload = new System.Windows.Forms.Button();
             this.pictureBox_murid = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label_registrasi = new System.Windows.Forms.Label();
+            this.button_excel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_murid)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_murid)).BeginInit();
@@ -219,9 +220,10 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button_excel);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.button_tambah);
-            this.panel2.Controls.Add(this.button_clear);
+            this.panel2.Controls.Add(this.button_register);
             this.panel2.Controls.Add(this.label_noTelp);
             this.panel2.Controls.Add(this.textBox_telepon);
             this.panel2.Controls.Add(this.button_upload);
@@ -266,20 +268,20 @@
             this.button_tambah.UseVisualStyleBackColor = false;
             this.button_tambah.Click += new System.EventHandler(this.button_tambah_Click);
             // 
-            // button_clear
+            // button_register
             // 
-            this.button_clear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_clear.BackColor = System.Drawing.Color.Orange;
-            this.button_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_clear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_clear.ForeColor = System.Drawing.Color.White;
-            this.button_clear.Location = new System.Drawing.Point(680, 212);
-            this.button_clear.Name = "button_clear";
-            this.button_clear.Size = new System.Drawing.Size(118, 39);
-            this.button_clear.TabIndex = 7;
-            this.button_clear.Text = "Bersihkan";
-            this.button_clear.UseVisualStyleBackColor = false;
-            this.button_clear.Click += new System.EventHandler(this.button_clear_Click);
+            this.button_register.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_register.BackColor = System.Drawing.Color.Orange;
+            this.button_register.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_register.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_register.ForeColor = System.Drawing.Color.White;
+            this.button_register.Location = new System.Drawing.Point(680, 212);
+            this.button_register.Name = "button_register";
+            this.button_register.Size = new System.Drawing.Size(118, 39);
+            this.button_register.TabIndex = 7;
+            this.button_register.Text = "Bersihkan";
+            this.button_register.UseVisualStyleBackColor = false;
+            this.button_register.Click += new System.EventHandler(this.button_clear_Click);
             // 
             // label_noTelp
             // 
@@ -349,11 +351,25 @@
             this.label_registrasi.TabIndex = 0;
             this.label_registrasi.Text = "Registrasi";
             // 
+            // button_excel
+            // 
+            this.button_excel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_excel.BackColor = System.Drawing.Color.Black;
+            this.button_excel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_excel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_excel.ForeColor = System.Drawing.Color.White;
+            this.button_excel.Location = new System.Drawing.Point(556, 212);
+            this.button_excel.Name = "button_excel";
+            this.button_excel.Size = new System.Drawing.Size(118, 39);
+            this.button_excel.TabIndex = 34;
+            this.button_excel.Text = "Excel";
+            this.button_excel.UseVisualStyleBackColor = false;
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(934, 611);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.DataGridView_murid);
@@ -392,9 +408,10 @@
         private System.Windows.Forms.Label label_noTelp;
         private System.Windows.Forms.TextBox textBox_telepon;
         private System.Windows.Forms.Button button_tambah;
-        private System.Windows.Forms.Button button_clear;
+        private System.Windows.Forms.Button button_register;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label_registrasi;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button_excel;
     }
 }

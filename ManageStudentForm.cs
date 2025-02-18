@@ -57,11 +57,6 @@ namespace StudentManagementSystem
             return true;
         }
 
-        private void ManageStudentForm_Load(object sender, EventArgs e)
-        {
-            showTable();
-        }
-
         public void showTable()
         {
             DataGridView_murid.ReadOnly = true;
@@ -71,8 +66,31 @@ namespace StudentManagementSystem
             imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
         }
 
+        private void setFormEnabled(bool status)
+        {
+            textBox_nama.Enabled = status;
+            textBox_telepon.Enabled = status;
+            dateTimePicker_lahir.Enabled = status;
+            radioButton_laki.Enabled = status;
+            radioButton_perempuan.Enabled = status;
+            textBox_alamat.Enabled = status;
+            textBox_id.Enabled = status;
+            button_upload.Enabled = status;
+            button_bersihkan.Enabled = status;
+            button_hapus.Enabled = status;
+            button_update.Enabled = status;
+        }
+
+        private void ManageStudentForm_Load(object sender, EventArgs e)
+        {
+            showTable();
+            setFormEnabled(false);
+        }
+
         private void DataGridView_murid_Click(object sender, EventArgs e)
         {
+            setFormEnabled(true);
+
             textBox_id.Text = DataGridView_murid.CurrentRow.Cells[0].Value.ToString();
             textBox_nama.Text = DataGridView_murid.CurrentRow.Cells[1].Value.ToString();
             textBox_telepon.Text = DataGridView_murid.CurrentRow.Cells[2].Value.ToString();
@@ -92,7 +110,7 @@ namespace StudentManagementSystem
             pictureBox_murid.Image = Image.FromStream(ms);
         }
 
-        private void button_clear_Click(object sender, EventArgs e)
+        private void button_bersihkan_Click(object sender, EventArgs e)
         {
             textBox_id.Clear();
             textBox_nama.Clear();
@@ -102,6 +120,8 @@ namespace StudentManagementSystem
             radioButton_perempuan.Checked = false;
             textBox_alamat.Clear();
             pictureBox_murid.Image = null;
+
+            setFormEnabled(false);
         }
 
         private void button_upload_Click(object sender, EventArgs e)
@@ -114,16 +134,25 @@ namespace StudentManagementSystem
                 pictureBox_murid.Image = Image.FromFile(opf.FileName);
         }
 
-        private void button_search_Click(object sender, EventArgs e)
+        private void textBox_cari_TextChanged(object sender, EventArgs e)
         {
-            DataGridView_murid.DataSource = siswa.cariMurid(textBox_search.Text);
-            DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
-            imageColumn = (DataGridViewImageColumn)DataGridView_murid.Columns[6];
-            imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            DataGridView_murid.DataSource = siswa.cariMurid(textBox_cari.Text);
+
+            if (DataGridView_murid.Columns.Count > 6)
+            {
+                DataGridViewImageColumn imageColumn = (DataGridViewImageColumn)DataGridView_murid.Columns[6];
+                imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            }
         }
 
         private void button_update_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(textBox_id.Text))
+            {
+                MessageBox.Show("Silakan pilih data murid dari tabel sebelum mengubah data.", "Data Tidak Dipilih", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             int id = Convert.ToInt32(textBox_id.Text);
             string nama = textBox_nama.Text;
             string telepon = textBox_telepon.Text;
@@ -147,7 +176,7 @@ namespace StudentManagementSystem
                     {
                         showTable();
                         MessageBox.Show("Data Peserta Didik Telah Diubah", "Perubahan Berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        button_clear.PerformClick();
+                        button_bersihkan.PerformClick();
                     }
                 } catch (Exception ex)
 
@@ -157,17 +186,22 @@ namespace StudentManagementSystem
             }
         }
 
-        private void button_delete_Click(object sender, EventArgs e)
+        private void button_hapus_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(textBox_id.Text))
+            {
+                MessageBox.Show("Silakan pilih murid dari tabel sebelum menghapus data.", "Data Tidak Dipilih", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             int id = Convert.ToInt32(textBox_id.Text);
-            //Show a confirmation message before delete the student
             if (MessageBox.Show("Apakah Anda yakin ingin menghapus data peserta didik ini?", "Menghapus Data Peserta Didik", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (siswa.deleteStudent(id))
                 {
                     showTable();
                     MessageBox.Show("Data Peserta Didik Berhasil Dihapus", "Menghapus Data Peserta Didik", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    button_clear.PerformClick();
+                    button_bersihkan.PerformClick();
                 }
             }
         }

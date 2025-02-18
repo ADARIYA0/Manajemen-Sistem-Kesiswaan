@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace Student_Management_System
 {
@@ -15,14 +15,14 @@ namespace Student_Management_System
 
         public bool insertStudent(string nama, string telepon, DateTime tanggalLahir, string jenisKelamin, string alamat, byte[] img)
         {
-            MySqlCommand command = new MySqlCommand("INSERT INTO siswa(NamaMurid, Telepon, TanggalLahir, JenisKelamin, Alamat, FotoMurid) VALUES(@nama, @telepon, @lahir, @jenisKelamin, @alamat, @img)", connect.getconnection);
+            SqlCommand command = new SqlCommand("INSERT INTO siswa(NamaMurid, Telepon, TanggalLahir, JenisKelamin, Alamat, FotoMurid) VALUES(@nama, @telepon, @lahir, @jenisKelamin, @alamat, @img)", connect.getConnection);
 
-            command.Parameters.Add("@nama", MySqlDbType.VarChar).Value = nama;
-            command.Parameters.Add("@telepon", MySqlDbType.VarChar).Value = telepon;
-            command.Parameters.Add("@lahir", MySqlDbType.Date).Value = tanggalLahir;
-            command.Parameters.Add("@jenisKelamin", MySqlDbType.VarChar).Value = jenisKelamin;
-            command.Parameters.Add("@alamat", MySqlDbType.VarChar).Value = alamat;
-            command.Parameters.Add("@img", MySqlDbType.Blob).Value = img;
+            command.Parameters.Add("@nama", SqlDbType.VarChar).Value = nama;
+            command.Parameters.Add("@telepon", SqlDbType.VarChar).Value = telepon;
+            command.Parameters.Add("@lahir", SqlDbType.Date).Value = tanggalLahir;
+            command.Parameters.Add("@jenisKelamin", SqlDbType.VarChar).Value = jenisKelamin;
+            command.Parameters.Add("@alamat", SqlDbType.VarChar).Value = alamat;
+            command.Parameters.Add("@img", SqlDbType.Image).Value = img;
 
             connect.openConnect();
             if (command.ExecuteNonQuery() == 1)
@@ -38,8 +38,8 @@ namespace Student_Management_System
 
         public DataTable getStudentlist()
         {
-            MySqlCommand command = new MySqlCommand("SELECT * FROM siswa", connect.getconnection);
-            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            SqlCommand command = new SqlCommand("SELECT * FROM siswa", connect.getConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
             return table;
@@ -47,7 +47,7 @@ namespace Student_Management_System
 
         public string exeCount(string query)
         {
-            MySqlCommand command = new MySqlCommand(query, connect.getconnection);
+            SqlCommand command = new SqlCommand(query, connect.getConnection);
             connect.openConnect();
             string count = command.ExecuteScalar().ToString();
             connect.closeConnect();
@@ -72,10 +72,10 @@ namespace Student_Management_System
         public DataTable cariMurid(string searchdata)
         {
             string query = ("SELECT * FROM siswa WHERE CONCAT(Id, NamaMurid, Alamat) LIKE @search");
-            MySqlCommand command = new MySqlCommand(query, connect.getconnection);
+            SqlCommand command = new SqlCommand(query, connect.getConnection);
             command.Parameters.AddWithValue("@search", "%" + searchdata + "%");
 
-            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
             return table;
@@ -83,15 +83,15 @@ namespace Student_Management_System
 
         public bool updateStudent(int id, string nama, string telepon, DateTime tanggalLahir, string jenisKelamin, string alamat, byte[] img)
         {
-            MySqlCommand command = new MySqlCommand("UPDATE siswa SET NamaMurid = @nama, Telepon = @telepon, TanggalLahir = @lahir, JenisKelamin = @jenisKelamin, Alamat = @alamat, FotoMurid = @img WHERE Id = @id", connect.getconnection);
+            SqlCommand command = new SqlCommand("UPDATE siswa SET NamaMurid = @nama, Telepon = @telepon, TanggalLahir = @lahir, JenisKelamin = @jenisKelamin, Alamat = @alamat, FotoMurid = @img WHERE Id = @id", connect.getConnection);
 
-            command.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
-            command.Parameters.Add("@nama", MySqlDbType.VarChar).Value = nama;
-            command.Parameters.Add("@telepon", MySqlDbType.VarChar).Value = telepon;
-            command.Parameters.Add("@lahir", MySqlDbType.Date).Value = tanggalLahir;
-            command.Parameters.Add("@jenisKelamin", MySqlDbType.VarChar).Value = jenisKelamin;
-            command.Parameters.Add("@alamat", MySqlDbType.VarChar).Value = alamat;
-            command.Parameters.Add("@img", MySqlDbType.Blob).Value = img;
+            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            command.Parameters.Add("@nama", SqlDbType.VarChar).Value = nama;
+            command.Parameters.Add("@telepon", SqlDbType.VarChar).Value = telepon;
+            command.Parameters.Add("@lahir", SqlDbType.Date).Value = tanggalLahir;
+            command.Parameters.Add("@jenisKelamin", SqlDbType.VarChar).Value = jenisKelamin;
+            command.Parameters.Add("@alamat", SqlDbType.VarChar).Value = alamat;
+            command.Parameters.Add("@img", SqlDbType.Image).Value = img;
 
             connect.openConnect();
             if (command.ExecuteNonQuery() == 1)
@@ -107,9 +107,9 @@ namespace Student_Management_System
 
         public bool deleteStudent(int id)
         {
-            MySqlCommand command = new MySqlCommand("DELETE FROM siswa WHERE Id = @id", connect.getconnection);
+            SqlCommand command = new SqlCommand("DELETE FROM siswa WHERE Id = @id", connect.getConnection);
 
-            command.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
+            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
 
             connect.openConnect();
             if (command.ExecuteNonQuery() == 1)
@@ -123,10 +123,10 @@ namespace Student_Management_System
             }
         }
 
-        public DataTable getList(MySqlCommand command)
+        public DataTable getList(SqlCommand command)
         {
-            command.Connection = connect.getconnection;
-            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            command.Connection = connect.getConnection;
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
             return table;

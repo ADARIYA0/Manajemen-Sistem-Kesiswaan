@@ -3,37 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace Student_Management_System
 {
     internal class DBconnect
     {
-        MySqlConnection connect = new MySqlConnection(
-            "datasource=localhost;" +
-            "port=3306;" +
-            "username=root;" +
-            "password=;" +
-            "database=siswa-db;");
+        private SqlConnection connection = new SqlConnection("Data Source=localhost\\MSSQLSERVER01;Initial Catalog=siswa-db;Integrated Security=True;Encrypt=False");
 
-        public MySqlConnection getconnection
+        public SqlConnection getConnection
         {
-            get { return connect; }
+            get { return connection; }
         }
 
         public void openConnect()
         {
-            if (connect.State == System.Data.ConnectionState.Closed)
+            if (connection.State == System.Data.ConnectionState.Closed)
             {
-                connect.Open();
+                connection.Open();
             }
         }
 
         public void closeConnect()
         {
-            if (connect.State == System.Data.ConnectionState.Open)
+            if (connection.State == System.Data.ConnectionState.Open)
             {
-                connect.Close();
+                connection.Close();
             }
         }
     }

@@ -32,19 +32,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageStudentForm));
-            this.pictureBox_murid = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label_registrasi = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button_update = new System.Windows.Forms.Button();
-            this.button_clear = new System.Windows.Forms.Button();
+            this.button_bersihkan = new System.Windows.Forms.Button();
             this.label_noTelp = new System.Windows.Forms.Label();
             this.textBox_telepon = new System.Windows.Forms.TextBox();
             this.button_upload = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox_id = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button_delete = new System.Windows.Forms.Button();
+            this.button_hapus = new System.Windows.Forms.Button();
+            this.pictureBox_murid = new System.Windows.Forms.PictureBox();
             this.label_nama = new System.Windows.Forms.Label();
             this.textBox_alamat = new System.Windows.Forms.TextBox();
             this.textBox_nama = new System.Windows.Forms.TextBox();
@@ -55,24 +55,13 @@
             this.label_jenisKelamin = new System.Windows.Forms.Label();
             this.dateTimePicker_lahir = new System.Windows.Forms.DateTimePicker();
             this.DataGridView_murid = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.textBox_search = new System.Windows.Forms.TextBox();
-            this.button_search = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_murid)).BeginInit();
+            this.textBox_cari = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_murid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_murid)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox_murid
-            // 
-            this.pictureBox_murid.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox_murid.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox_murid.Location = new System.Drawing.Point(804, 17);
-            this.pictureBox_murid.Name = "pictureBox_murid";
-            this.pictureBox_murid.Size = new System.Drawing.Size(118, 110);
-            this.pictureBox_murid.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox_murid.TabIndex = 12;
-            this.pictureBox_murid.TabStop = false;
             // 
             // panel1
             // 
@@ -92,9 +81,9 @@
             this.label_registrasi.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_registrasi.Location = new System.Drawing.Point(370, 13);
             this.label_registrasi.Name = "label_registrasi";
-            this.label_registrasi.Size = new System.Drawing.Size(190, 25);
+            this.label_registrasi.Size = new System.Drawing.Size(163, 25);
             this.label_registrasi.TabIndex = 0;
-            this.label_registrasi.Text = "Manage Students";
+            this.label_registrasi.Text = "Manage Murid";
             // 
             // panel3
             // 
@@ -109,7 +98,7 @@
             // button_update
             // 
             this.button_update.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_update.BackColor = System.Drawing.Color.OrangeRed;
+            this.button_update.BackColor = System.Drawing.Color.Orange;
             this.button_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_update.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_update.ForeColor = System.Drawing.Color.White;
@@ -121,20 +110,20 @@
             this.button_update.UseVisualStyleBackColor = false;
             this.button_update.Click += new System.EventHandler(this.button_update_Click);
             // 
-            // button_clear
+            // button_bersihkan
             // 
-            this.button_clear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_clear.BackColor = System.Drawing.Color.Orange;
-            this.button_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_clear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_clear.ForeColor = System.Drawing.Color.White;
-            this.button_clear.Location = new System.Drawing.Point(680, 188);
-            this.button_clear.Name = "button_clear";
-            this.button_clear.Size = new System.Drawing.Size(118, 39);
-            this.button_clear.TabIndex = 7;
-            this.button_clear.Text = "Bersihkan";
-            this.button_clear.UseVisualStyleBackColor = false;
-            this.button_clear.Click += new System.EventHandler(this.button_clear_Click);
+            this.button_bersihkan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_bersihkan.BackColor = System.Drawing.Color.OrangeRed;
+            this.button_bersihkan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_bersihkan.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_bersihkan.ForeColor = System.Drawing.Color.White;
+            this.button_bersihkan.Location = new System.Drawing.Point(680, 188);
+            this.button_bersihkan.Name = "button_bersihkan";
+            this.button_bersihkan.Size = new System.Drawing.Size(118, 39);
+            this.button_bersihkan.TabIndex = 7;
+            this.button_bersihkan.Text = "Bersihkan";
+            this.button_bersihkan.UseVisualStyleBackColor = false;
+            this.button_bersihkan.Click += new System.EventHandler(this.button_bersihkan_Click);
             // 
             // label_noTelp
             // 
@@ -175,10 +164,10 @@
             // 
             this.panel2.Controls.Add(this.textBox_id);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.button_delete);
+            this.panel2.Controls.Add(this.button_hapus);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.button_update);
-            this.panel2.Controls.Add(this.button_clear);
+            this.panel2.Controls.Add(this.button_bersihkan);
             this.panel2.Controls.Add(this.label_noTelp);
             this.panel2.Controls.Add(this.textBox_telepon);
             this.panel2.Controls.Add(this.button_upload);
@@ -193,7 +182,7 @@
             this.panel2.Controls.Add(this.label_jenisKelamin);
             this.panel2.Controls.Add(this.dateTimePicker_lahir);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 378);
+            this.panel2.Location = new System.Drawing.Point(0, 376);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(934, 235);
             this.panel2.TabIndex = 16;
@@ -217,22 +206,33 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 19);
             this.label8.TabIndex = 35;
-            this.label8.Text = "Id No :";
+            this.label8.Text = "ID No :";
             // 
-            // button_delete
+            // button_hapus
             // 
-            this.button_delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_delete.BackColor = System.Drawing.Color.Red;
-            this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_delete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_delete.ForeColor = System.Drawing.Color.White;
-            this.button_delete.Location = new System.Drawing.Point(556, 188);
-            this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(118, 39);
-            this.button_delete.TabIndex = 34;
-            this.button_delete.Text = "Hapus";
-            this.button_delete.UseVisualStyleBackColor = false;
-            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
+            this.button_hapus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_hapus.BackColor = System.Drawing.Color.Red;
+            this.button_hapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_hapus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_hapus.ForeColor = System.Drawing.Color.White;
+            this.button_hapus.Location = new System.Drawing.Point(556, 188);
+            this.button_hapus.Name = "button_hapus";
+            this.button_hapus.Size = new System.Drawing.Size(118, 39);
+            this.button_hapus.TabIndex = 34;
+            this.button_hapus.Text = "Hapus";
+            this.button_hapus.UseVisualStyleBackColor = false;
+            this.button_hapus.Click += new System.EventHandler(this.button_hapus_Click);
+            // 
+            // pictureBox_murid
+            // 
+            this.pictureBox_murid.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox_murid.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox_murid.Location = new System.Drawing.Point(804, 17);
+            this.pictureBox_murid.Name = "pictureBox_murid";
+            this.pictureBox_murid.Size = new System.Drawing.Size(118, 110);
+            this.pictureBox_murid.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_murid.TabIndex = 12;
+            this.pictureBox_murid.TabStop = false;
             // 
             // label_nama
             // 
@@ -369,7 +369,7 @@
             this.DataGridView_murid.RowHeadersVisible = false;
             this.DataGridView_murid.RowHeadersWidth = 51;
             this.DataGridView_murid.RowTemplate.Height = 80;
-            this.DataGridView_murid.Size = new System.Drawing.Size(909, 281);
+            this.DataGridView_murid.Size = new System.Drawing.Size(909, 279);
             this.DataGridView_murid.TabIndex = 15;
             this.DataGridView_murid.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView_murid.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -394,35 +394,33 @@
             this.DataGridView_murid.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.DataGridView_murid.Click += new System.EventHandler(this.DataGridView_murid_Click);
             // 
-            // textBox_search
+            // textBox_cari
             // 
-            this.textBox_search.Location = new System.Drawing.Point(642, 58);
-            this.textBox_search.Name = "textBox_search";
-            this.textBox_search.Size = new System.Drawing.Size(156, 27);
-            this.textBox_search.TabIndex = 35;
+            this.textBox_cari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_cari.Location = new System.Drawing.Point(766, 58);
+            this.textBox_cari.Name = "textBox_cari";
+            this.textBox_cari.Size = new System.Drawing.Size(156, 27);
+            this.textBox_cari.TabIndex = 35;
+            this.textBox_cari.TextChanged += new System.EventHandler(this.textBox_cari_TextChanged);
             // 
-            // button_search
+            // label1
             // 
-            this.button_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_search.BackColor = System.Drawing.Color.Orange;
-            this.button_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_search.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_search.ForeColor = System.Drawing.Color.White;
-            this.button_search.Location = new System.Drawing.Point(804, 51);
-            this.button_search.Name = "button_search";
-            this.button_search.Size = new System.Drawing.Size(118, 39);
-            this.button_search.TabIndex = 36;
-            this.button_search.Text = "Search";
-            this.button_search.UseVisualStyleBackColor = false;
-            this.button_search.Click += new System.EventHandler(this.button_search_Click);
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.label1.Location = new System.Drawing.Point(609, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(151, 21);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Cari Nama Murid :";
             // 
             // ManageStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 613);
-            this.Controls.Add(this.button_search);
-            this.Controls.Add(this.textBox_search);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(934, 611);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox_cari);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.DataGridView_murid);
@@ -431,13 +429,13 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ManageStudentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Manage Students";
+            this.Text = "Manage Murid";
             this.Load += new System.EventHandler(this.ManageStudentForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_murid)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_murid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_murid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -451,7 +449,7 @@
         private System.Windows.Forms.Label label_registrasi;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button_update;
-        private System.Windows.Forms.Button button_clear;
+        private System.Windows.Forms.Button button_bersihkan;
         private System.Windows.Forms.Label label_noTelp;
         private System.Windows.Forms.TextBox textBox_telepon;
         private System.Windows.Forms.Button button_upload;
@@ -466,10 +464,10 @@
         private System.Windows.Forms.Label label_jenisKelamin;
         private System.Windows.Forms.DateTimePicker dateTimePicker_lahir;
         private Guna.UI2.WinForms.Guna2DataGridView DataGridView_murid;
-        private System.Windows.Forms.Button button_delete;
-        private System.Windows.Forms.TextBox textBox_search;
-        private System.Windows.Forms.Button button_search;
+        private System.Windows.Forms.Button button_hapus;
+        private System.Windows.Forms.TextBox textBox_cari;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox_id;
+        private System.Windows.Forms.Label label1;
     }
 }

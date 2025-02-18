@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using ExcelDataReader;
 
 namespace Student_Management_System
 {
@@ -78,6 +78,11 @@ namespace Student_Management_System
 
         private void button_tambah_Click(object sender, EventArgs e)
         {
+            if (!verify())
+            {
+                return;
+            }
+
             string nama = textBox_nama.Text;
             string telepon = textBox_telepon.Text;
             DateTime tanggalLahir = dateTimePicker_lahir.Value;

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Student_Management_System;
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 using DGVPrinterHelper;
 
 namespace StudentManagementSystem
@@ -17,6 +17,7 @@ namespace StudentManagementSystem
     {
         StudentClass siswa = new StudentClass();
         DGVPrinter printer = new DGVPrinter();
+
         public PrintStudentForm()
         {
             InitializeComponent();
@@ -24,10 +25,10 @@ namespace StudentManagementSystem
 
         private void PrintStudentForm_Load(object sender, EventArgs e)
         {
-            showData(new MySqlCommand("SELECT * FROM siswa"));
+            showData(new SqlCommand("SELECT * FROM siswa"));
         }
 
-        public void showData(MySqlCommand command)
+        public void showData(SqlCommand command)
         {
             DataGridView_murid.ReadOnly = true;
             DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
@@ -38,35 +39,51 @@ namespace StudentManagementSystem
             imageColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
-        private void button_search_Click(object sender, EventArgs e)
-        {
-            string selectQuery;
-            if (radioButton_all.Checked)
-            {
-                selectQuery = "SELECT * FROM siswa";
-            } else if (radioButton_laki.Checked)
-            {
-                selectQuery = "SELECT * FROM siswa WHERE JenisKelamin = 'Laki'";
-            } else
-            {
-                selectQuery = "SELECT * FROM siswa WHERE JenisKelamin = 'Perempuan'";
-            }
-            showData(new MySqlCommand(selectQuery));
-        }
-
         private void button_print_Click(object sender, EventArgs e)
         {
-            printer.Title = "Mdemy Students List";
+            printer.Title = "List Murid Mdemy";
             printer.SubTitle = string.Format("Date: {0}", DateTime.Now.Date);
             printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
             printer.PageNumbers = true;
             printer.PageNumberInHeader = false;
             printer.PorportionalColumns = true;
             printer.HeaderCellAlignment = StringAlignment.Near;
-            printer.Footer = "foxlearn";
             printer.FooterSpacing = 15;
             printer.printDocument.DefaultPageSettings.Landscape = true;
             printer.PrintDataGridView(DataGridView_murid);
+        }
+
+        private void radioButton_all_CheckedChanged(object sender, EventArgs e)
+        {
+            string selectQuery = "SELECT * FROM siswa";
+            if (radioButton_laki.Checked)
+            {
+                selectQuery = "SELECT * FROM siswa";
+            }
+
+            showData(new SqlCommand(selectQuery));
+        }
+
+        private void radioButton_laki_CheckedChanged(object sender, EventArgs e)
+        {
+            string selectQuery = "SELECT * FROM siswa";
+            if (radioButton_laki.Checked)
+            {
+                selectQuery = "SELECT * FROM siswa WHERE JenisKelamin = 'Laki'";
+            }
+            
+            showData(new SqlCommand(selectQuery));
+        }
+
+        private void radioButton_perempuan_CheckedChanged(object sender, EventArgs e)
+        {
+            string selectQuery = "SELECT * FROM siswa";
+            if (radioButton_perempuan.Checked)
+            {
+                selectQuery = "SELECT * FROM siswa WHERE JenisKelamin = 'Perempuan'";
+            }
+
+            showData(new SqlCommand(selectQuery));
         }
     }
 }

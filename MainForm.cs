@@ -98,6 +98,7 @@ namespace Student_Management_System
         #region CourseSubmenu
         private void button_newCourse_Click(object sender, EventArgs e)
         {
+            openChildForm(new CourseForm());
             //...
             //..Your code
             //...
@@ -106,6 +107,7 @@ namespace Student_Management_System
 
         private void button_manageCourse_Click(object sender, EventArgs e)
         {
+            openChildForm(new ManageCourseForm());
             //...
             //..Your code
             //...
@@ -114,6 +116,7 @@ namespace Student_Management_System
 
         private void button_coursePrint_Click(object sender, EventArgs e)
         {
+            openChildForm(new PrintCourseForm());
             //...
             //..Your code
             //...
