@@ -1,23 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Student_Management_System;
 using System.Data.SqlClient;
 
-namespace StudentManagementSystem
+namespace SistemManajemenSekolah
 {
-    internal class CourseClass
+    internal class Kelas
     {
         DBconnect connect = new DBconnect();
 
-        public bool insertCourse(string namaKursus, int jam, string desk)
+        public bool insertKelas(string namaKelas, int jam, string desk)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO kursus(NamaKursus, Jam, Deskripsi) VALUES (@nk, @jam, @desk)", connect.getConnection);
+            SqlCommand command = new SqlCommand("INSERT INTO kelas(NamaKelas, Jam, Deskripsi) VALUES (@nk, @jam, @desk)", connect.getConnection);
 
-            command.Parameters.Add("@nk", SqlDbType.VarChar).Value = namaKursus;
+            command.Parameters.Add("@nk", SqlDbType.VarChar).Value = namaKelas;
             command.Parameters.Add("@jam", SqlDbType.Int).Value = jam;
             command.Parameters.Add("@desk", SqlDbType.VarChar).Value = desk;
 
@@ -33,19 +28,19 @@ namespace StudentManagementSystem
             }
         }
 
-        public DataTable getCourseList(SqlCommand command)
+        public DataTable ambilDaftarKelas(SqlCommand command)
         {
             command.Connection = connect.getConnection;
             SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            return table;
+            DataTable tabel = new DataTable();
+            adapter.Fill(tabel);
+            return tabel;
         }
 
-        public bool isCourseExists(string namaKursus)
+        public bool cekKelas(string namaKelas)
         {
-            SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM kursus WHERE NamaKursus = @nk", connect.getConnection);
-            command.Parameters.Add("@nk", SqlDbType.VarChar).Value = namaKursus;
+            SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM kelas WHERE NamaKelas = @nk", connect.getConnection);
+            command.Parameters.Add("@nk", SqlDbType.VarChar).Value = namaKelas;
 
             connect.openConnect();
             int count = Convert.ToInt32(command.ExecuteScalar());
@@ -55,12 +50,12 @@ namespace StudentManagementSystem
         }
 
 
-        public bool updateKursus(int idKursus, string namaKursus, int jam, string desk)
+        public bool updateKelas(int id, string namaKelas, int jam, string desk)
         {
-            SqlCommand command = new SqlCommand("UPDATE kursus SET NamaKursus = @nk, Jam = @jam, Deskripsi = @desk WHERE IdKursus = @id", connect.getConnection);
+            SqlCommand command = new SqlCommand("UPDATE kelas SET NamaKelas = @nk, Jam = @jam, Deskripsi = @desk WHERE Id = @id", connect.getConnection);
 
-            command.Parameters.Add("@id", SqlDbType.Int).Value = idKursus;
-            command.Parameters.Add("@nk", SqlDbType.VarChar).Value = namaKursus;
+            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            command.Parameters.Add("@nk", SqlDbType.VarChar).Value = namaKelas;
             command.Parameters.Add("@jam", SqlDbType.Int).Value = jam;
             command.Parameters.Add("@desk", SqlDbType.VarChar).Value = desk;
 
@@ -76,10 +71,10 @@ namespace StudentManagementSystem
             }
         }
 
-        public bool hapusKursus(int idKursus)
+        public bool hapusKelas(int id)
         {
-            SqlCommand command = new SqlCommand("DELETE FROM kursus WHERE IdKursus = @id", connect.getConnection);
-            command.Parameters.Add("@id", SqlDbType.Int).Value = idKursus;
+            SqlCommand command = new SqlCommand("DELETE FROM kelas WHERE Id = @id", connect.getConnection);
+            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
 
             connect.openConnect();
             if (command.ExecuteNonQuery() == 1)
@@ -93,16 +88,16 @@ namespace StudentManagementSystem
             }
         }
 
-        public DataTable cariKursus(string searchdata)
+        public DataTable cariKelas(string searchdata)
         {
-            string query = ("SELECT * FROM kursus WHERE CONCAT(IdKursus, NamaKursus) LIKE @search");
+            string query = ("SELECT * FROM kelas WHERE CONCAT(Id, NamaKelas) LIKE @search");
             SqlCommand command = new SqlCommand(query, connect.getConnection);
             command.Parameters.AddWithValue("@search", "%" + searchdata + "%");
 
             SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            return table;
+            DataTable tabel = new DataTable();
+            adapter.Fill(tabel);
+            return tabel;
         }
     }
 }

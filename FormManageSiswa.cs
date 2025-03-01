@@ -2,21 +2,20 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-using Student_Management_System;
 
-namespace StudentManagementSystem
+namespace SistemManajemenSekolah
 {
-    public partial class ManageStudentForm : Form
+    public partial class FormManageSiswa : Form
     {
-        StudentClass siswa = new StudentClass();
-        public ManageStudentForm()
+        Siswa siswa = new Siswa();
+        public FormManageSiswa()
         {
             InitializeComponent();
         }
@@ -57,12 +56,12 @@ namespace StudentManagementSystem
             return true;
         }
 
-        public void showTable()
+        public void tampilkanTabel()
         {
-            DataGridView_murid.ReadOnly = true;
-            DataGridView_murid.DataSource = siswa.getStudentlist();
+            DataGridView_siswa.ReadOnly = true;
+            DataGridView_siswa.DataSource = siswa.ambilList(new SqlCommand("SELECT * FROM siswa"));
             DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
-            imageColumn = (DataGridViewImageColumn)DataGridView_murid.Columns[6];
+            imageColumn = (DataGridViewImageColumn)DataGridView_siswa.Columns[6];
             imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
         }
 
@@ -83,7 +82,7 @@ namespace StudentManagementSystem
 
         private void ManageStudentForm_Load(object sender, EventArgs e)
         {
-            showTable();
+            tampilkanTabel();
             setFormEnabled(false);
         }
 
@@ -91,12 +90,12 @@ namespace StudentManagementSystem
         {
             setFormEnabled(true);
 
-            textBox_id.Text = DataGridView_murid.CurrentRow.Cells[0].Value.ToString();
-            textBox_nama.Text = DataGridView_murid.CurrentRow.Cells[1].Value.ToString();
-            textBox_telepon.Text = DataGridView_murid.CurrentRow.Cells[2].Value.ToString();
+            textBox_id.Text = DataGridView_siswa.CurrentRow.Cells[0].Value.ToString();
+            textBox_nama.Text = DataGridView_siswa.CurrentRow.Cells[1].Value.ToString();
+            textBox_telepon.Text = DataGridView_siswa.CurrentRow.Cells[2].Value.ToString();
 
-            dateTimePicker_lahir.Value = (DateTime)DataGridView_murid.CurrentRow.Cells[3].Value;
-            if (DataGridView_murid.CurrentRow.Cells[4].Value.ToString()  == "Laki")
+            dateTimePicker_lahir.Value = (DateTime)DataGridView_siswa.CurrentRow.Cells[3].Value;
+            if (DataGridView_siswa.CurrentRow.Cells[4].Value.ToString()  == "Laki")
             {
                 radioButton_laki.Checked = true;
             } else
@@ -104,8 +103,8 @@ namespace StudentManagementSystem
                 radioButton_perempuan.Checked = true;
             }
 
-            textBox_alamat.Text = DataGridView_murid.CurrentRow.Cells[5].Value.ToString();
-            byte[] img = (byte[])DataGridView_murid.CurrentRow.Cells[6].Value;
+            textBox_alamat.Text = DataGridView_siswa.CurrentRow.Cells[5].Value.ToString();
+            byte[] img = (byte[])DataGridView_siswa.CurrentRow.Cells[6].Value;
             MemoryStream ms = new MemoryStream(img);
             pictureBox_murid.Image = Image.FromStream(ms);
         }
@@ -127,8 +126,8 @@ namespace StudentManagementSystem
         private void button_upload_Click(object sender, EventArgs e)
         {
             OpenFileDialog opf = new OpenFileDialog();
-            opf.Filter = "Select Photo(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
-            opf.Title = "Browse Image";
+            opf.Filter = "Pilih Foto(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
+            opf.Title = "Cari Image";
 
             if (opf.ShowDialog() == DialogResult.OK)
                 pictureBox_murid.Image = Image.FromFile(opf.FileName);
@@ -136,11 +135,11 @@ namespace StudentManagementSystem
 
         private void textBox_cari_TextChanged(object sender, EventArgs e)
         {
-            DataGridView_murid.DataSource = siswa.cariMurid(textBox_cari.Text);
+            DataGridView_siswa.DataSource = siswa.cariSiswa(textBox_cari.Text);
 
-            if (DataGridView_murid.Columns.Count > 6)
+            if (DataGridView_siswa.Columns.Count > 6)
             {
-                DataGridViewImageColumn imageColumn = (DataGridViewImageColumn)DataGridView_murid.Columns[6];
+                DataGridViewImageColumn imageColumn = (DataGridViewImageColumn)DataGridView_siswa.Columns[6];
                 imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
             }
         }
@@ -172,9 +171,9 @@ namespace StudentManagementSystem
                     MemoryStream ms = new MemoryStream();
                     pictureBox_murid.Image.Save(ms, pictureBox_murid.Image.RawFormat);
                     byte[] img = ms.ToArray();
-                    if (siswa.updateStudent(id, nama, telepon, tanggalLahir, jenisKelamin, alamat, img))
+                    if (siswa.updateSiswa(id, nama, telepon, tanggalLahir, jenisKelamin, alamat, img))
                     {
-                        showTable();
+                        tampilkanTabel();
                         MessageBox.Show("Data Peserta Didik Telah Diubah", "Perubahan Berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         button_bersihkan.PerformClick();
                     }
@@ -197,9 +196,9 @@ namespace StudentManagementSystem
             int id = Convert.ToInt32(textBox_id.Text);
             if (MessageBox.Show("Apakah Anda yakin ingin menghapus data peserta didik ini?", "Menghapus Data Peserta Didik", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (siswa.deleteStudent(id))
+                if (siswa.hapusSiswa(id))
                 {
-                    showTable();
+                    tampilkanTabel();
                     MessageBox.Show("Data Peserta Didik Berhasil Dihapus", "Menghapus Data Peserta Didik", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     button_bersihkan.PerformClick();
                 }

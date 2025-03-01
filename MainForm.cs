@@ -1,6 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using StudentManagementSystem;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,27 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Student_Management_System
+namespace SistemManajemenSekolah
 {
     public partial class MainForm : Form
     {
-        StudentClass siswa = new StudentClass();
+        Siswa siswa = new Siswa();
         public MainForm()
         {
             InitializeComponent();
             customizeDesign();
         }
 
-        private void jumlahMurid()
+        private void jumlahSiswa()
         {
-            label_jumlahMrd.Text = "Jumlah Murid : " + siswa.jumlahMurid();
-            label_mrdLaki.Text = "Laki : " + siswa.muridLaki();
-            label_mrdPerempuan.Text = "Perempuan : " + siswa.muridPerempuan();
+            label_jumlahMrd.Text = "Jumlah Siswa : " + siswa.totalSiswa();
+            label_mrdLaki.Text = "Laki : " + siswa.siswaLaki();
+            label_mrdPerempuan.Text = "Perempuan : " + siswa.siswaPerempuan();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            jumlahMurid();
+            jumlahSiswa();
         }
 
         private void customizeDesign()
@@ -65,7 +63,7 @@ namespace Student_Management_System
         #region StdSubmenu
         private void button_registration_Click(object sender, EventArgs e)
         {
-            openChildForm(new RegisterForm());
+            openChildForm(new FormRegister());
             //...
             //..Your code
             //...
@@ -74,7 +72,7 @@ namespace Student_Management_System
 
         private void button_manageStd_Click(object sender, EventArgs e)
         {
-            openChildForm(new ManageStudentForm());
+            openChildForm(new FormManageSiswa());
             //...
             //..Your code
             //...
@@ -98,7 +96,7 @@ namespace Student_Management_System
         #region CourseSubmenu
         private void button_newCourse_Click(object sender, EventArgs e)
         {
-            openChildForm(new CourseForm());
+            openChildForm(new FormKelas());
             //...
             //..Your code
             //...
@@ -107,7 +105,7 @@ namespace Student_Management_System
 
         private void button_manageCourse_Click(object sender, EventArgs e)
         {
-            openChildForm(new ManageCourseForm());
+            openChildForm(new FormManageKelas());
             //...
             //..Your code
             //...
@@ -116,7 +114,7 @@ namespace Student_Management_System
 
         private void button_coursePrint_Click(object sender, EventArgs e)
         {
-            openChildForm(new PrintCourseForm());
+            openChildForm(new FormPrintKelas());
             //...
             //..Your code
             //...
@@ -131,6 +129,7 @@ namespace Student_Management_System
         #region ScoreSubmenu
         private void button_newScore_Click(object sender, EventArgs e)
         {
+            openChildForm(new FormNilai());
             //...
             //..Your code
             //...
@@ -139,11 +138,19 @@ namespace Student_Management_System
 
         private void button_manageScore_Click(object sender, EventArgs e)
         {
+            openChildForm(new FormManageNilai());
+            //...
+            //..Your code
+            //...
             hideSubmenu(panel_scoreSubmenu);
         }
 
         private void button_scorePrint_Click(object sender, EventArgs e)
         {
+            openChildForm(new FormPrintNilai());
+            //...
+            //..Your code
+            //...
             hideSubmenu(panel_scoreSubmenu);
         }
 
@@ -179,12 +186,14 @@ namespace Student_Management_System
             if (activeForm != null)
                 activeForm.Close();
             panel_main.Controls.Add(panel_cover);
-            jumlahMurid();
+            jumlahSiswa();
         }
 
         private void button_exit_Click(object sender, EventArgs e)
         {
-
+            FormLogin login = new FormLogin();
+            this.Hide();
+            login.Show();
         }
     }
 }

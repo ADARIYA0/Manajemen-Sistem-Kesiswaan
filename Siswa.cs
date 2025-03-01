@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
-namespace Student_Management_System
+namespace SistemManajemenSekolah
 {
-    internal class StudentClass
+    internal class Siswa
     {
         DBconnect connect = new DBconnect();
 
-        public bool insertStudent(string nama, string telepon, DateTime tanggalLahir, string jenisKelamin, string alamat, byte[] img)
+        public bool insertSiswa(string nama, string telepon, DateTime tanggalLahir, string jenisKelamin, string alamat, byte[] img)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO siswa(NamaMurid, Telepon, TanggalLahir, JenisKelamin, Alamat, FotoMurid) VALUES(@nama, @telepon, @lahir, @jenisKelamin, @alamat, @img)", connect.getConnection);
+            SqlCommand command = new SqlCommand("INSERT INTO siswa(NamaSiswa, Telepon, TanggalLahir, JenisKelamin, Alamat, FotoSiswa) VALUES(@nama, @telepon, @lahir, @jenisKelamin, @alamat, @img)", connect.getConnection);
 
             command.Parameters.Add("@nama", SqlDbType.VarChar).Value = nama;
             command.Parameters.Add("@telepon", SqlDbType.VarChar).Value = telepon;
@@ -36,13 +36,13 @@ namespace Student_Management_System
             }
         }
 
-        public DataTable getStudentlist()
+        public DataTable ambilList(SqlCommand command)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM siswa", connect.getConnection);
+            command.Connection = connect.getConnection;
             SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            return table;
+            DataTable tabel = new DataTable();
+            adapter.Fill(tabel);
+            return tabel;
         }
 
         public string exeCount(string query)
@@ -54,36 +54,36 @@ namespace Student_Management_System
             return count;
         }
 
-        public string jumlahMurid()
+        public string totalSiswa()
         {
             return exeCount("SELECT COUNT(*) FROM siswa");
         }
 
-        public string muridLaki()
+        public string siswaLaki()
         {
             return exeCount("SELECT COUNT(*) FROM siswa WHERE LOWER(JenisKelamin) = 'laki'");
         }
 
-        public string muridPerempuan()
+        public string siswaPerempuan()
         {
             return exeCount("SELECT COUNT(*) FROM siswa WHERE LOWER(JenisKelamin) = 'Perempuan'");
         }
 
-        public DataTable cariMurid(string searchdata)
+        public DataTable cariSiswa(string searchdata)
         {
-            string query = ("SELECT * FROM siswa WHERE CONCAT(Id, NamaMurid, Alamat) LIKE @search");
+            string query = ("SELECT * FROM siswa WHERE CONCAT(Id, NamaSiswa, Alamat) LIKE @search");
             SqlCommand command = new SqlCommand(query, connect.getConnection);
             command.Parameters.AddWithValue("@search", "%" + searchdata + "%");
 
             SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            return table;
+            DataTable tabel = new DataTable();
+            adapter.Fill(tabel);
+            return tabel;
         }
 
-        public bool updateStudent(int id, string nama, string telepon, DateTime tanggalLahir, string jenisKelamin, string alamat, byte[] img)
+        public bool updateSiswa(int id, string nama, string telepon, DateTime tanggalLahir, string jenisKelamin, string alamat, byte[] img)
         {
-            SqlCommand command = new SqlCommand("UPDATE siswa SET NamaMurid = @nama, Telepon = @telepon, TanggalLahir = @lahir, JenisKelamin = @jenisKelamin, Alamat = @alamat, FotoMurid = @img WHERE Id = @id", connect.getConnection);
+            SqlCommand command = new SqlCommand("UPDATE siswa SET NamaSiswa = @nama, Telepon = @telepon, TanggalLahir = @lahir, JenisKelamin = @jenisKelamin, Alamat = @alamat, FotoSiswa = @img WHERE Id = @id", connect.getConnection);
 
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
             command.Parameters.Add("@nama", SqlDbType.VarChar).Value = nama;
@@ -105,7 +105,7 @@ namespace Student_Management_System
             }
         }
 
-        public bool deleteStudent(int id)
+        public bool hapusSiswa(int id)
         {
             SqlCommand command = new SqlCommand("DELETE FROM siswa WHERE Id = @id", connect.getConnection);
 
@@ -121,15 +121,6 @@ namespace Student_Management_System
                 connect.closeConnect();
                 return false;
             }
-        }
-
-        public DataTable getList(SqlCommand command)
-        {
-            command.Connection = connect.getConnection;
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            return table;
         }
     }
 }

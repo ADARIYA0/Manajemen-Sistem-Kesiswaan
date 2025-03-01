@@ -10,26 +10,27 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DGVPrinterHelper;
 
-namespace StudentManagementSystem
+namespace SistemManajemenSekolah
 {
-    public partial class PrintCourseForm: Form
+    public partial class FormPrintKelas: Form
     {
-        CourseClass kursus = new CourseClass();
+        Kelas kelas = new Kelas();
         DGVPrinter printer = new DGVPrinter();
 
-        public PrintCourseForm()
+        public FormPrintKelas()
         {
             InitializeComponent();
         }
 
         private void PrintCourseForm_Load(object sender, EventArgs e)
         {
-            DataGridView_kursus.DataSource = kursus.getCourseList(new SqlCommand("SELECT * FROM kursus"));
+            DataGridView_kelas.ReadOnly = true;
+            DataGridView_kelas.DataSource = kelas.ambilDaftarKelas(new SqlCommand("SELECT * FROM kelas"));
         }
 
         private void button_print_Click(object sender, EventArgs e)
         {
-            printer.Title = "List Kursus Mdemy";
+            printer.Title = "List Kelas Mdemy";
             printer.SubTitle = string.Format("Date: {0}", DateTime.Now.Date);
             printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
             printer.PageNumbers = true;
@@ -38,16 +39,16 @@ namespace StudentManagementSystem
             printer.HeaderCellAlignment = StringAlignment.Near;
             printer.FooterSpacing = 15;
             printer.printDocument.DefaultPageSettings.Landscape = true;
-            printer.PrintDataGridView(DataGridView_kursus);
+            printer.PrintDataGridView(DataGridView_kelas);
         }
 
         private void textBox_cari_TextChanged(object sender, EventArgs e)
         {
-            DataGridView_kursus.DataSource = kursus.cariKursus(textBox_cari.Text);
+            DataGridView_kelas.DataSource = kelas.cariKelas(textBox_cari.Text);
 
-            if (DataGridView_kursus.Columns.Count > 6)
+            if (DataGridView_kelas.Columns.Count > 6)
             {
-                DataGridViewImageColumn imageColumn = (DataGridViewImageColumn)DataGridView_kursus.Columns[3];
+                DataGridViewImageColumn imageColumn = (DataGridViewImageColumn)DataGridView_kelas.Columns[3];
                 imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
             }
         }

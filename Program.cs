@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Student_Management_System
+namespace SistemManajemenSekolah
 {
     internal static class Program
     {
@@ -14,10 +14,9 @@ namespace Student_Management_System
         [STAThread]
         static void Main()
         {
-            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new FormLogin());
         }
     }
 }

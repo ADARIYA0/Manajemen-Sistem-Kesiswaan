@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ExcelDataReader;
 
-namespace Student_Management_System
+namespace SistemManajemenSekolah
 {
-    public partial class RegisterForm : Form
+    public partial class FormRegister : Form
     {
-        StudentClass siswa = new StudentClass();
+        Siswa siswa = new Siswa();
 
-        public RegisterForm()
+        public FormRegister()
         {
             InitializeComponent();
         }
@@ -52,10 +52,10 @@ namespace Student_Management_System
             return true;
         }
 
-        public void showTable()
+        public void tampilkanTabel()
         {
             DataGridView_murid.ReadOnly = true;
-            DataGridView_murid.DataSource = siswa.getStudentlist();
+            DataGridView_murid.DataSource = siswa.ambilList(new SqlCommand("SELECT * FROM siswa"));
             DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
             imageColumn = (DataGridViewImageColumn)DataGridView_murid.Columns[6];
             imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
@@ -63,7 +63,7 @@ namespace Student_Management_System
 
         private void RegisterForm_Load(object sender, EventArgs e)
         {
-            showTable();
+            tampilkanTabel();
         }
 
         private void button_upload_Click(object sender, EventArgs e)
@@ -101,9 +101,9 @@ namespace Student_Management_System
                     MemoryStream ms = new MemoryStream();
                     pictureBox_murid.Image.Save(ms, pictureBox_murid.Image.RawFormat);
                     byte[] img = ms.ToArray();
-                    if (siswa.insertStudent(nama, telepon, tanggalLahir, jenisKelamin, alamat, img))
+                    if (siswa.insertSiswa(nama, telepon, tanggalLahir, jenisKelamin, alamat, img))
                     {
-                        showTable();
+                        tampilkanTabel();
                         MessageBox.Show("Data Peserta Didik Baru Ditambahkan", "Penambahan Berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 } catch (Exception ex)

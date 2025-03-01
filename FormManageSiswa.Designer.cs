@@ -1,6 +1,6 @@
-﻿namespace StudentManagementSystem
+﻿namespace SistemManajemenSekolah
 {
-    partial class ManageStudentForm
+    partial class FormManageSiswa
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageStudentForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManageSiswa));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label_registrasi = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -54,13 +54,13 @@
             this.label_tanggalLahir = new System.Windows.Forms.Label();
             this.label_jenisKelamin = new System.Windows.Forms.Label();
             this.dateTimePicker_lahir = new System.Windows.Forms.DateTimePicker();
-            this.DataGridView_murid = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.DataGridView_siswa = new Guna.UI2.WinForms.Guna2DataGridView();
             this.textBox_cari = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_murid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_murid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_siswa)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,9 +81,9 @@
             this.label_registrasi.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_registrasi.Location = new System.Drawing.Point(370, 13);
             this.label_registrasi.Name = "label_registrasi";
-            this.label_registrasi.Size = new System.Drawing.Size(163, 25);
+            this.label_registrasi.Size = new System.Drawing.Size(161, 25);
             this.label_registrasi.TabIndex = 0;
-            this.label_registrasi.Text = "Manage Murid";
+            this.label_registrasi.Text = "Manage Siswa";
             // 
             // panel3
             // 
@@ -335,16 +335,16 @@
             this.dateTimePicker_lahir.Size = new System.Drawing.Size(291, 27);
             this.dateTimePicker_lahir.TabIndex = 2;
             // 
-            // DataGridView_murid
+            // DataGridView_siswa
             // 
-            this.DataGridView_murid.AllowUserToAddRows = false;
-            this.DataGridView_murid.AllowUserToDeleteRows = false;
+            this.DataGridView_siswa.AllowUserToAddRows = false;
+            this.DataGridView_siswa.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.DataGridView_murid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.DataGridView_murid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DataGridView_siswa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DataGridView_siswa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DataGridView_murid.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.DataGridView_siswa.BackgroundColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -352,9 +352,9 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView_murid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DataGridView_murid.ColumnHeadersHeight = 24;
-            this.DataGridView_murid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DataGridView_siswa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DataGridView_siswa.ColumnHeadersHeight = 24;
+            this.DataGridView_siswa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -362,37 +362,37 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView_murid.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DataGridView_murid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridView_murid.Location = new System.Drawing.Point(13, 93);
-            this.DataGridView_murid.Name = "DataGridView_murid";
-            this.DataGridView_murid.RowHeadersVisible = false;
-            this.DataGridView_murid.RowHeadersWidth = 51;
-            this.DataGridView_murid.RowTemplate.Height = 80;
-            this.DataGridView_murid.Size = new System.Drawing.Size(909, 279);
-            this.DataGridView_murid.TabIndex = 15;
-            this.DataGridView_murid.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.DataGridView_murid.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.DataGridView_murid.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.DataGridView_murid.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.DataGridView_murid.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.DataGridView_murid.ThemeStyle.BackColor = System.Drawing.Color.Gainsboro;
-            this.DataGridView_murid.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridView_murid.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.DataGridView_murid.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DataGridView_murid.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DataGridView_murid.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.DataGridView_murid.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.DataGridView_murid.ThemeStyle.HeaderStyle.Height = 24;
-            this.DataGridView_murid.ThemeStyle.ReadOnly = false;
-            this.DataGridView_murid.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.DataGridView_murid.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DataGridView_murid.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DataGridView_murid.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.DataGridView_murid.ThemeStyle.RowsStyle.Height = 80;
-            this.DataGridView_murid.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridView_murid.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.DataGridView_murid.Click += new System.EventHandler(this.DataGridView_murid_Click);
+            this.DataGridView_siswa.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DataGridView_siswa.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridView_siswa.Location = new System.Drawing.Point(13, 93);
+            this.DataGridView_siswa.Name = "DataGridView_siswa";
+            this.DataGridView_siswa.RowHeadersVisible = false;
+            this.DataGridView_siswa.RowHeadersWidth = 51;
+            this.DataGridView_siswa.RowTemplate.Height = 80;
+            this.DataGridView_siswa.Size = new System.Drawing.Size(909, 279);
+            this.DataGridView_siswa.TabIndex = 15;
+            this.DataGridView_siswa.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridView_siswa.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.DataGridView_siswa.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.DataGridView_siswa.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.DataGridView_siswa.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.DataGridView_siswa.ThemeStyle.BackColor = System.Drawing.Color.Gainsboro;
+            this.DataGridView_siswa.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridView_siswa.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.DataGridView_siswa.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DataGridView_siswa.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridView_siswa.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.DataGridView_siswa.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DataGridView_siswa.ThemeStyle.HeaderStyle.Height = 24;
+            this.DataGridView_siswa.ThemeStyle.ReadOnly = false;
+            this.DataGridView_siswa.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridView_siswa.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DataGridView_siswa.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridView_siswa.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DataGridView_siswa.ThemeStyle.RowsStyle.Height = 80;
+            this.DataGridView_siswa.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridView_siswa.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DataGridView_siswa.Click += new System.EventHandler(this.DataGridView_murid_Click);
             // 
             // textBox_cari
             // 
@@ -413,7 +413,7 @@
             this.label1.TabIndex = 36;
             this.label1.Text = "Cari Nama Murid :";
             // 
-            // ManageStudentForm
+            // FormManageSiswa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -423,20 +423,20 @@
             this.Controls.Add(this.textBox_cari);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.DataGridView_murid);
+            this.Controls.Add(this.DataGridView_siswa);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "ManageStudentForm";
+            this.Name = "FormManageSiswa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Manage Murid";
+            this.Text = "Manage Siswa";
             this.Load += new System.EventHandler(this.ManageStudentForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_murid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_murid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_siswa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -463,7 +463,7 @@
         private System.Windows.Forms.Label label_tanggalLahir;
         private System.Windows.Forms.Label label_jenisKelamin;
         private System.Windows.Forms.DateTimePicker dateTimePicker_lahir;
-        private Guna.UI2.WinForms.Guna2DataGridView DataGridView_murid;
+        private Guna.UI2.WinForms.Guna2DataGridView DataGridView_siswa;
         private System.Windows.Forms.Button button_hapus;
         private System.Windows.Forms.TextBox textBox_cari;
         private System.Windows.Forms.Label label8;

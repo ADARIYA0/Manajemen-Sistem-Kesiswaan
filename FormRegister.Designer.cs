@@ -1,6 +1,6 @@
-﻿namespace Student_Management_System
+﻿namespace SistemManajemenSekolah
 {
-    partial class RegisterForm
+    partial class FormRegister
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegister));
             this.label_nama = new System.Windows.Forms.Label();
             this.textBox_nama = new System.Windows.Forms.TextBox();
             this.DataGridView_murid = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -43,6 +43,7 @@
             this.label_alamat = new System.Windows.Forms.Label();
             this.textBox_alamat = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button_excel = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button_tambah = new System.Windows.Forms.Button();
             this.button_register = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@
             this.pictureBox_murid = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label_registrasi = new System.Windows.Forms.Label();
-            this.button_excel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_murid)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_murid)).BeginInit();
@@ -68,7 +68,7 @@
             this.label_nama.Location = new System.Drawing.Point(21, 25);
             this.label_nama.Name = "label_nama";
             this.label_nama.Size = new System.Drawing.Size(67, 19);
-            this.label_nama.TabIndex = 1;
+            this.label_nama.TabIndex = 0;
             this.label_nama.Text = "Nama :";
             // 
             // textBox_nama
@@ -77,7 +77,7 @@
             this.textBox_nama.Location = new System.Drawing.Point(94, 21);
             this.textBox_nama.Name = "textBox_nama";
             this.textBox_nama.Size = new System.Drawing.Size(419, 27);
-            this.textBox_nama.TabIndex = 0;
+            this.textBox_nama.TabIndex = 3;
             // 
             // DataGridView_murid
             // 
@@ -85,8 +85,8 @@
             this.DataGridView_murid.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.DataGridView_murid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.DataGridView_murid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.DataGridView_murid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DataGridView_murid.BackgroundColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -114,7 +114,7 @@
             this.DataGridView_murid.RowHeadersWidth = 51;
             this.DataGridView_murid.RowTemplate.Height = 80;
             this.DataGridView_murid.Size = new System.Drawing.Size(909, 289);
-            this.DataGridView_murid.TabIndex = 2;
+            this.DataGridView_murid.TabIndex = 1;
             this.DataGridView_murid.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView_murid.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.DataGridView_murid.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
@@ -146,7 +146,7 @@
             this.label_tanggalLahir.Location = new System.Drawing.Point(21, 76);
             this.label_tanggalLahir.Name = "label_tanggalLahir";
             this.label_tanggalLahir.Size = new System.Drawing.Size(123, 19);
-            this.label_tanggalLahir.TabIndex = 5;
+            this.label_tanggalLahir.TabIndex = 0;
             this.label_tanggalLahir.Text = "Tanggal Lahir :";
             // 
             // dateTimePicker_lahir
@@ -155,7 +155,7 @@
             this.dateTimePicker_lahir.Location = new System.Drawing.Point(150, 72);
             this.dateTimePicker_lahir.Name = "dateTimePicker_lahir";
             this.dateTimePicker_lahir.Size = new System.Drawing.Size(291, 27);
-            this.dateTimePicker_lahir.TabIndex = 2;
+            this.dateTimePicker_lahir.TabIndex = 5;
             // 
             // label_jenisKelamin
             // 
@@ -166,7 +166,7 @@
             this.label_jenisKelamin.Location = new System.Drawing.Point(462, 76);
             this.label_jenisKelamin.Name = "label_jenisKelamin";
             this.label_jenisKelamin.Size = new System.Drawing.Size(124, 19);
-            this.label_jenisKelamin.TabIndex = 7;
+            this.label_jenisKelamin.TabIndex = 0;
             this.label_jenisKelamin.Text = "Jenis Kelamin :";
             // 
             // radioButton_laki
@@ -179,7 +179,7 @@
             this.radioButton_laki.Location = new System.Drawing.Point(592, 74);
             this.radioButton_laki.Name = "radioButton_laki";
             this.radioButton_laki.Size = new System.Drawing.Size(58, 23);
-            this.radioButton_laki.TabIndex = 3;
+            this.radioButton_laki.TabIndex = 6;
             this.radioButton_laki.TabStop = true;
             this.radioButton_laki.Text = "Laki";
             this.radioButton_laki.UseVisualStyleBackColor = true;
@@ -193,7 +193,7 @@
             this.radioButton_perempuan.Location = new System.Drawing.Point(656, 74);
             this.radioButton_perempuan.Name = "radioButton_perempuan";
             this.radioButton_perempuan.Size = new System.Drawing.Size(119, 23);
-            this.radioButton_perempuan.TabIndex = 4;
+            this.radioButton_perempuan.TabIndex = 7;
             this.radioButton_perempuan.Text = "Perempuan";
             this.radioButton_perempuan.UseVisualStyleBackColor = true;
             // 
@@ -206,7 +206,7 @@
             this.label_alamat.Location = new System.Drawing.Point(21, 124);
             this.label_alamat.Name = "label_alamat";
             this.label_alamat.Size = new System.Drawing.Size(75, 19);
-            this.label_alamat.TabIndex = 10;
+            this.label_alamat.TabIndex = 0;
             this.label_alamat.Text = "Alamat :";
             // 
             // textBox_alamat
@@ -216,7 +216,7 @@
             this.textBox_alamat.Multiline = true;
             this.textBox_alamat.Name = "textBox_alamat";
             this.textBox_alamat.Size = new System.Drawing.Size(658, 50);
-            this.textBox_alamat.TabIndex = 5;
+            this.textBox_alamat.TabIndex = 8;
             // 
             // panel2
             // 
@@ -241,17 +241,31 @@
             this.panel2.Location = new System.Drawing.Point(0, 352);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(934, 259);
-            this.panel2.TabIndex = 13;
+            this.panel2.TabIndex = 2;
+            // 
+            // button_excel
+            // 
+            this.button_excel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_excel.BackColor = System.Drawing.Color.Black;
+            this.button_excel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_excel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_excel.ForeColor = System.Drawing.Color.White;
+            this.button_excel.Location = new System.Drawing.Point(556, 212);
+            this.button_excel.Name = "button_excel";
+            this.button_excel.Size = new System.Drawing.Size(118, 39);
+            this.button_excel.TabIndex = 10;
+            this.button_excel.Text = "Excel";
+            this.button_excel.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.panel3.Location = new System.Drawing.Point(13, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(909, 10);
-            this.panel3.TabIndex = 33;
+            this.panel3.TabIndex = 0;
             // 
             // button_tambah
             // 
@@ -263,7 +277,7 @@
             this.button_tambah.Location = new System.Drawing.Point(804, 212);
             this.button_tambah.Name = "button_tambah";
             this.button_tambah.Size = new System.Drawing.Size(118, 39);
-            this.button_tambah.TabIndex = 8;
+            this.button_tambah.TabIndex = 12;
             this.button_tambah.Text = "Tambah";
             this.button_tambah.UseVisualStyleBackColor = false;
             this.button_tambah.Click += new System.EventHandler(this.button_tambah_Click);
@@ -278,7 +292,7 @@
             this.button_register.Location = new System.Drawing.Point(680, 212);
             this.button_register.Name = "button_register";
             this.button_register.Size = new System.Drawing.Size(118, 39);
-            this.button_register.TabIndex = 7;
+            this.button_register.TabIndex = 11;
             this.button_register.Text = "Bersihkan";
             this.button_register.UseVisualStyleBackColor = false;
             this.button_register.Click += new System.EventHandler(this.button_clear_Click);
@@ -292,7 +306,7 @@
             this.label_noTelp.Location = new System.Drawing.Point(519, 25);
             this.label_noTelp.Name = "label_noTelp";
             this.label_noTelp.Size = new System.Drawing.Size(79, 19);
-            this.label_noTelp.TabIndex = 29;
+            this.label_noTelp.TabIndex = 0;
             this.label_noTelp.Text = "No. Telp :";
             // 
             // textBox_telepon
@@ -301,7 +315,7 @@
             this.textBox_telepon.Location = new System.Drawing.Point(604, 21);
             this.textBox_telepon.Name = "textBox_telepon";
             this.textBox_telepon.Size = new System.Drawing.Size(156, 27);
-            this.textBox_telepon.TabIndex = 1;
+            this.textBox_telepon.TabIndex = 4;
             // 
             // button_upload
             // 
@@ -313,7 +327,7 @@
             this.button_upload.Location = new System.Drawing.Point(804, 138);
             this.button_upload.Name = "button_upload";
             this.button_upload.Size = new System.Drawing.Size(118, 39);
-            this.button_upload.TabIndex = 6;
+            this.button_upload.TabIndex = 9;
             this.button_upload.Text = "Upload";
             this.button_upload.UseVisualStyleBackColor = false;
             this.button_upload.Click += new System.EventHandler(this.button_upload_Click);
@@ -339,7 +353,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(934, 51);
-            this.panel1.TabIndex = 14;
+            this.panel1.TabIndex = 0;
             // 
             // label_registrasi
             // 
@@ -350,20 +364,6 @@
             this.label_registrasi.Size = new System.Drawing.Size(106, 25);
             this.label_registrasi.TabIndex = 0;
             this.label_registrasi.Text = "Registrasi";
-            // 
-            // button_excel
-            // 
-            this.button_excel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_excel.BackColor = System.Drawing.Color.Black;
-            this.button_excel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_excel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_excel.ForeColor = System.Drawing.Color.White;
-            this.button_excel.Location = new System.Drawing.Point(556, 212);
-            this.button_excel.Name = "button_excel";
-            this.button_excel.Size = new System.Drawing.Size(118, 39);
-            this.button_excel.TabIndex = 34;
-            this.button_excel.Text = "Excel";
-            this.button_excel.UseVisualStyleBackColor = false;
             // 
             // RegisterForm
             // 

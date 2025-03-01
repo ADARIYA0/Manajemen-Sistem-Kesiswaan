@@ -1,6 +1,6 @@
-﻿namespace StudentManagementSystem
+﻿namespace SistemManajemenSekolah
 {
-    partial class ManageCourseForm
+    partial class FormManageKelas
     {
         /// <summary>
         /// Required designer variable.
@@ -31,8 +31,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageCourseForm));
-            this.label_course = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManageKelas));
+            this.label_kelas = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button_update = new System.Windows.Forms.Button();
             this.button_bersihkan = new System.Windows.Forms.Button();
@@ -41,33 +41,33 @@
             this.label_namaKursus = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button_hapus = new System.Windows.Forms.Button();
-            this.label_idKursus = new System.Windows.Forms.Label();
-            this.textBox_idKursus = new System.Windows.Forms.TextBox();
+            this.label_id = new System.Windows.Forms.Label();
+            this.textBox_id = new System.Windows.Forms.TextBox();
             this.textBox_deskripsi = new System.Windows.Forms.TextBox();
             this.label_deskripsi = new System.Windows.Forms.Label();
-            this.textBox_namaKursus = new System.Windows.Forms.TextBox();
+            this.textBox_namaKelas = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.DataGridView_kursus = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.DataGridView_kelas = new Guna.UI2.WinForms.Guna2DataGridView();
             this.textBox_cari = new System.Windows.Forms.TextBox();
             this.label_cariKursus = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_kursus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_kelas)).BeginInit();
             this.SuspendLayout();
             // 
-            // label_course
+            // label_kelas
             // 
-            this.label_course.AutoSize = true;
-            this.label_course.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_course.Location = new System.Drawing.Point(370, 13);
-            this.label_course.Name = "label_course";
-            this.label_course.Size = new System.Drawing.Size(169, 25);
-            this.label_course.TabIndex = 0;
-            this.label_course.Text = "Manage Kursus";
+            this.label_kelas.AutoSize = true;
+            this.label_kelas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_kelas.Location = new System.Drawing.Point(370, 13);
+            this.label_kelas.Name = "label_kelas";
+            this.label_kelas.Size = new System.Drawing.Size(159, 25);
+            this.label_kelas.TabIndex = 0;
+            this.label_kelas.Text = "Manage Kelas";
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.panel3.Location = new System.Drawing.Point(13, 2);
@@ -140,8 +140,8 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.button_hapus);
-            this.panel2.Controls.Add(this.label_idKursus);
-            this.panel2.Controls.Add(this.textBox_idKursus);
+            this.panel2.Controls.Add(this.label_id);
+            this.panel2.Controls.Add(this.textBox_id);
             this.panel2.Controls.Add(this.textBox_deskripsi);
             this.panel2.Controls.Add(this.label_deskripsi);
             this.panel2.Controls.Add(this.panel3);
@@ -150,7 +150,7 @@
             this.panel2.Controls.Add(this.label_jam);
             this.panel2.Controls.Add(this.textBox_jam);
             this.panel2.Controls.Add(this.label_namaKursus);
-            this.panel2.Controls.Add(this.textBox_namaKursus);
+            this.panel2.Controls.Add(this.textBox_namaKelas);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 376);
             this.panel2.Name = "panel2";
@@ -172,25 +172,25 @@
             this.button_hapus.UseVisualStyleBackColor = false;
             this.button_hapus.Click += new System.EventHandler(this.button_hapus_Click);
             // 
-            // label_idKursus
+            // label_id
             // 
-            this.label_idKursus.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label_idKursus.AutoSize = true;
-            this.label_idKursus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_idKursus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label_idKursus.Location = new System.Drawing.Point(363, 73);
-            this.label_idKursus.Name = "label_idKursus";
-            this.label_idKursus.Size = new System.Drawing.Size(79, 19);
-            this.label_idKursus.TabIndex = 36;
-            this.label_idKursus.Text = "ID Kursus:";
+            this.label_id.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label_id.AutoSize = true;
+            this.label_id.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.label_id.Location = new System.Drawing.Point(363, 73);
+            this.label_id.Name = "label_id";
+            this.label_id.Size = new System.Drawing.Size(79, 19);
+            this.label_id.TabIndex = 36;
+            this.label_id.Text = "ID Kursus:";
             // 
-            // textBox_idKursus
+            // textBox_id
             // 
-            this.textBox_idKursus.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox_idKursus.Location = new System.Drawing.Point(363, 94);
-            this.textBox_idKursus.Name = "textBox_idKursus";
-            this.textBox_idKursus.Size = new System.Drawing.Size(156, 27);
-            this.textBox_idKursus.TabIndex = 35;
+            this.textBox_id.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_id.Location = new System.Drawing.Point(363, 94);
+            this.textBox_id.Name = "textBox_id";
+            this.textBox_id.Size = new System.Drawing.Size(156, 27);
+            this.textBox_id.TabIndex = 35;
             // 
             // textBox_deskripsi
             // 
@@ -213,18 +213,18 @@
             this.label_deskripsi.TabIndex = 34;
             this.label_deskripsi.Text = "Deskripsi:";
             // 
-            // textBox_namaKursus
+            // textBox_namaKelas
             // 
-            this.textBox_namaKursus.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox_namaKursus.Location = new System.Drawing.Point(21, 40);
-            this.textBox_namaKursus.Name = "textBox_namaKursus";
-            this.textBox_namaKursus.Size = new System.Drawing.Size(498, 27);
-            this.textBox_namaKursus.TabIndex = 0;
+            this.textBox_namaKelas.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_namaKelas.Location = new System.Drawing.Point(21, 40);
+            this.textBox_namaKelas.Name = "textBox_namaKelas";
+            this.textBox_namaKelas.Size = new System.Drawing.Size(498, 27);
+            this.textBox_namaKelas.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.panel1.Controls.Add(this.label_course);
+            this.panel1.Controls.Add(this.label_kelas);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.Color.White;
@@ -233,16 +233,16 @@
             this.panel1.Size = new System.Drawing.Size(934, 51);
             this.panel1.TabIndex = 20;
             // 
-            // DataGridView_kursus
+            // DataGridView_kelas
             // 
-            this.DataGridView_kursus.AllowUserToAddRows = false;
-            this.DataGridView_kursus.AllowUserToDeleteRows = false;
+            this.DataGridView_kelas.AllowUserToAddRows = false;
+            this.DataGridView_kelas.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.DataGridView_kursus.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.DataGridView_kursus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.DataGridView_kelas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DataGridView_kelas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DataGridView_kursus.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.DataGridView_kelas.BackgroundColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -250,9 +250,9 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView_kursus.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DataGridView_kursus.ColumnHeadersHeight = 24;
-            this.DataGridView_kursus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DataGridView_kelas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DataGridView_kelas.ColumnHeadersHeight = 24;
+            this.DataGridView_kelas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -260,37 +260,37 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView_kursus.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DataGridView_kursus.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridView_kursus.Location = new System.Drawing.Point(13, 93);
-            this.DataGridView_kursus.Name = "DataGridView_kursus";
-            this.DataGridView_kursus.RowHeadersVisible = false;
-            this.DataGridView_kursus.RowHeadersWidth = 51;
-            this.DataGridView_kursus.RowTemplate.Height = 80;
-            this.DataGridView_kursus.Size = new System.Drawing.Size(909, 279);
-            this.DataGridView_kursus.TabIndex = 18;
-            this.DataGridView_kursus.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.DataGridView_kursus.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.DataGridView_kursus.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.DataGridView_kursus.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.DataGridView_kursus.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.DataGridView_kursus.ThemeStyle.BackColor = System.Drawing.Color.Gainsboro;
-            this.DataGridView_kursus.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridView_kursus.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.DataGridView_kursus.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DataGridView_kursus.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DataGridView_kursus.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.DataGridView_kursus.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.DataGridView_kursus.ThemeStyle.HeaderStyle.Height = 24;
-            this.DataGridView_kursus.ThemeStyle.ReadOnly = false;
-            this.DataGridView_kursus.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.DataGridView_kursus.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DataGridView_kursus.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DataGridView_kursus.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.DataGridView_kursus.ThemeStyle.RowsStyle.Height = 80;
-            this.DataGridView_kursus.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridView_kursus.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.DataGridView_kursus.Click += new System.EventHandler(this.DataGridView_course_Click);
+            this.DataGridView_kelas.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DataGridView_kelas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridView_kelas.Location = new System.Drawing.Point(13, 93);
+            this.DataGridView_kelas.Name = "DataGridView_kelas";
+            this.DataGridView_kelas.RowHeadersVisible = false;
+            this.DataGridView_kelas.RowHeadersWidth = 51;
+            this.DataGridView_kelas.RowTemplate.Height = 80;
+            this.DataGridView_kelas.Size = new System.Drawing.Size(909, 279);
+            this.DataGridView_kelas.TabIndex = 18;
+            this.DataGridView_kelas.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridView_kelas.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.DataGridView_kelas.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.DataGridView_kelas.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.DataGridView_kelas.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.DataGridView_kelas.ThemeStyle.BackColor = System.Drawing.Color.Gainsboro;
+            this.DataGridView_kelas.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridView_kelas.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.DataGridView_kelas.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DataGridView_kelas.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridView_kelas.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.DataGridView_kelas.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DataGridView_kelas.ThemeStyle.HeaderStyle.Height = 24;
+            this.DataGridView_kelas.ThemeStyle.ReadOnly = false;
+            this.DataGridView_kelas.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridView_kelas.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DataGridView_kelas.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridView_kelas.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DataGridView_kelas.ThemeStyle.RowsStyle.Height = 80;
+            this.DataGridView_kelas.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridView_kelas.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DataGridView_kelas.Click += new System.EventHandler(this.DataGridView_course_Click);
             // 
             // textBox_cari
             // 
@@ -305,11 +305,11 @@
             // 
             this.label_cariKursus.AutoSize = true;
             this.label_cariKursus.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label_cariKursus.Location = new System.Drawing.Point(607, 61);
+            this.label_cariKursus.Location = new System.Drawing.Point(614, 61);
             this.label_cariKursus.Name = "label_cariKursus";
-            this.label_cariKursus.Size = new System.Drawing.Size(153, 21);
+            this.label_cariKursus.Size = new System.Drawing.Size(146, 21);
             this.label_cariKursus.TabIndex = 38;
-            this.label_cariKursus.Text = "Cari Nama Kursus :";
+            this.label_cariKursus.Text = "Cari Nama Kelas :";
             // 
             // ManageCourseForm
             // 
@@ -321,18 +321,18 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox_cari);
-            this.Controls.Add(this.DataGridView_kursus);
+            this.Controls.Add(this.DataGridView_kelas);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ManageCourseForm";
-            this.Text = "Manage Kursus";
+            this.Text = "Manage Kelas";
             this.Load += new System.EventHandler(this.ManageCourseForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_kursus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_kelas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,7 +340,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label_course;
+        private System.Windows.Forms.Label label_kelas;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button_update;
         private System.Windows.Forms.Button button_bersihkan;
@@ -350,11 +350,11 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBox_deskripsi;
         private System.Windows.Forms.Label label_deskripsi;
-        private System.Windows.Forms.TextBox textBox_namaKursus;
+        private System.Windows.Forms.TextBox textBox_namaKelas;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2DataGridView DataGridView_kursus;
-        private System.Windows.Forms.Label label_idKursus;
-        private System.Windows.Forms.TextBox textBox_idKursus;
+        private Guna.UI2.WinForms.Guna2DataGridView DataGridView_kelas;
+        private System.Windows.Forms.Label label_id;
+        private System.Windows.Forms.TextBox textBox_id;
         private System.Windows.Forms.TextBox textBox_cari;
         private System.Windows.Forms.Button button_hapus;
         private System.Windows.Forms.Label label_cariKursus;
